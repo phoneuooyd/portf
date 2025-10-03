@@ -1,17 +1,201 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Portfolio – Strona powitalna</title>
+    <style>
+      :root {
+        --bg: #0e1014;
+        --text: #eaeef7;
+        --muted: #9aa3b2;
+        --accent-start: #e9d758; /* żółty */
+        --accent-end: #8a8bd9;   /* fioletowy */
+        --line: rgba(233, 215, 88, 0.6);
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+      .wrap {
+        min-height: 100dvh;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px 24px 24px;
+        position: relative;
+      }
+      .wrap::before,
+      .wrap::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 180px;
+        background: linear-gradient(180deg, var(--accent-start), var(--accent-end));
+        opacity: 0.9;
+        border-radius: 8px;
+      }
+      .wrap::before { top: 32px; left: 24px; box-shadow: 0 0 0 8px rgba(255,255,255,0.02) inset; }
+      .wrap::after  { right: 24px; bottom: 24px; height: 220px; }
+
+      .top-actions {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .icon-btn, .icon-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px; height: 40px;
+        border-radius: 8px;
+        background: rgba(255,255,255,0.04);
+        color: var(--text);
+        text-decoration: none;
+        border: 1px solid rgba(255,255,255,0.06);
+        transition: transform .15s ease, background .2s ease, border-color .2s ease;
+        cursor: pointer;
+      }
+      .icon-btn:hover, .icon-link:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
+      .icon { width: 20px; height: 20px; display: block; fill: currentColor; }
+
+      .grid {
+        margin-top: 90px;
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 48px;
+      }
+      @media (max-width: 980px) {
+        .grid { grid-template-columns: 1fr; }
+        .wrap::after { display:none; }
+      }
+
+      .welcome {
+        padding: 32px 24px 24px 28px;
+        position: relative;
+      }
+      .welcome::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18px;
+        bottom: 18px;
+        width: 4px;
+        background: linear-gradient(180deg, var(--accent-start), transparent);
+        border-radius: 3px;
+      }
+      h1.title {
+        margin: 0 0 16px;
+        font-weight: 300;
+        font-size: clamp(44px, 10vw, 96px);
+        letter-spacing: 1px;
+      }
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(14px, 2.2vw, 18px);
+        max-width: 62ch;
+      }
+
+      .projects {
+        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        padding: 18px 18px 10px;
+      }
+      .projects h2 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .projects .accent { position: relative; padding-left: 14px; }
+      .projects .accent::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 2px; bottom: 2px; width: 4px;
+        background: linear-gradient(180deg, var(--accent-start), var(--accent-end));
+        border-radius: 4px;
+      }
+      .proj-list { list-style: none; padding: 8px 4px 4px; margin: 0; display: grid; gap: 8px; }
+      .proj-list a { display: block; padding: 10px 12px; color: var(--text); text-decoration: none; border-radius: 10px; border: 1px solid transparent; transition: background .15s ease, border-color .15s ease, color .15s ease; }
+      .proj-list a:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
+      .proj-list a .underline { border-bottom: 2px solid var(--line); padding-bottom: 2px; }
+      footer { color: #7d8797; font-size: 12px; margin-top: 32px; text-align: right; opacity:.85; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-    <div>
-      <p>Hello, I'm a web developer!</p>
-    
+    <div class="wrap">
+      <div class="top-actions" aria-label="Szybkie akcje">
+        <button id="copyEmail" class="icon-btn" title="Kopiuj e‑mail do schowka">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+        </button>
+        <a class="icon-link" href="https://github.com/phoneuooyd" target="_blank" rel="noopener" title="GitHub">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.21.68-.47v-1.7c-2.78.6-3.37-1.19-3.37-1.19-.46-1.16-1.12-1.47-1.12-1.47-.92-.63.07-.62.07-.62 1.02.07 1.56 1.05 1.56 1.05.9 1.56 2.36 1.11 2.94.85.09-.66.35-1.11.64-1.37-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.02A9.5 9.5 0 0 1 12 6.8c.85 0 1.7.11 2.49.33 1.9-1.29 2.74-1.02 2.74-1.02.56 1.38.21 2.41.11 2.66.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .26.18.57.69.47A10 10 0 0 0 12 2Z"/></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/p-przybyszewski2709" target="_blank" rel="noopener" title="LinkedIn">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 7 1.64a2.44 2.44 0 0 1-.06 4.86ZM3.65 8.25h3.98v12.1H3.65V8.25Zm6.2 0h3.82v1.65h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.65 4.77 6.09v6.56h-3.98v-5.81c0-1.39-.02-3.19-1.94-3.19-1.94 0-2.24 1.52-2.24 3.09v5.91H9.85V8.25Z"/></svg>
+        </a>
+      </div>
+
+      <main class="grid">
+        <section class="welcome" aria-labelledby="welcome-title">
+          <h1 id="welcome-title" class="title">Witaj<span style="color: var(--muted)">.</span></h1>
+          <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
+          </p>
+        </section>
+
+        <aside class="projects" aria-labelledby="projects-title">
+          <h2 id="projects-title" class="accent">Projekty</h2>
+          <ul class="proj-list">
+            <li><a href="#"><span class="underline">Domposer</span></a></li>
+            <li><a href="#"><span class="underline">Cookiemunch</span></a></li>
+            <li><a href="#"><span class="underline">Screen time converter</span></a></li>
+            <li><a href="#"><span class="underline">LED multi</span></a></li>
+            <li><a href="#"><span class="underline">inline.svg</span></a></li>
+          </ul>
+        </aside>
+      </main>
+
+      <footer>© <span id="year"></span> phoneuooyd</footer>
     </div>
+
+    <!-- Oryginalny montaż aplikacji React/Vite (wyłączony na potrzeby landing page) -->
+    <!-- <div id="root"></div> -->
+    <!-- <script type="module" src="/src/main.jsx"></script> -->
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const EMAIL = 'p.przybyszewski2709@gmail.com';
+      const btn = document.getElementById('copyEmail');
+      btn?.addEventListener('click', async () => {
+        let ok = false;
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(EMAIL);
+            ok = true;
+          }
+        } catch (_) {}
+        if (!ok) {
+          const ta = document.createElement('textarea');
+          ta.value = EMAIL; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); ok = true; } catch (_) {}
+          ta.remove();
+        }
+        btn.setAttribute('title', ok ? 'Skopiowano!' : 'Nie udało się skopiować');
+        btn.style.background = ok ? 'rgba(135, 231, 158, 0.25)' : 'rgba(231, 135, 135, 0.25)';
+        setTimeout(() => { btn.style.background = ''; btn.setAttribute('title', 'Kopiuj e‑mail do schowka'); }, 1400);
+      });
+    </script>
   </body>
 </html>
