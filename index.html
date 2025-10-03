@@ -5,132 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio – Strona powitalna</title>
-    <style>
-      :root {
-        --bg: #0e1014;
-        --text: #eaeef7;
-        --muted: #9aa3b2;
-        --accent-start: #e9d758; /* żółty */
-        --accent-end: #8a8bd9;   /* fioletowy */
-        --line: rgba(233, 215, 88, 0.6);
-      }
-      * { box-sizing: border-box; }
-      html, body { height: 100%; }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.5;
-        overflow-x: hidden;
-      }
-      .wrap {
-        min-height: 100dvh;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 48px 24px 24px;
-        position: relative;
-      }
-      .wrap::before,
-      .wrap::after {
-        content: "";
-        position: absolute;
-        width: 14px;
-        height: 180px;
-        background: linear-gradient(180deg, var(--accent-start), var(--accent-end));
-        opacity: 0.9;
-        border-radius: 8px;
-      }
-      .wrap::before { top: 32px; left: 24px; box-shadow: 0 0 0 8px rgba(255,255,255,0.02) inset; }
-      .wrap::after  { right: 24px; bottom: 24px; height: 220px; }
-
-      .top-actions {
-        position: absolute;
-        top: 24px;
-        right: 24px;
-        display: flex;
-        gap: 12px;
-        align-items: center;
-      }
-      .icon-btn, .icon-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px; height: 40px;
-        border-radius: 8px;
-        background: rgba(255,255,255,0.04);
-        color: var(--text);
-        text-decoration: none;
-        border: 1px solid rgba(255,255,255,0.06);
-        transition: transform .15s ease, background .2s ease, border-color .2s ease;
-        cursor: pointer;
-      }
-      .icon-btn:hover, .icon-link:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
-      .icon { width: 20px; height: 20px; display: block; fill: currentColor; }
-
-      .grid {
-        margin-top: 90px;
-        display: grid;
-        grid-template-columns: 1fr 420px;
-        gap: 48px;
-      }
-      @media (max-width: 980px) {
-        .grid { grid-template-columns: 1fr; }
-        .wrap::after { display:none; }
-      }
-
-      .welcome {
-        padding: 32px 24px 24px 28px;
-        position: relative;
-      }
-      .welcome::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 18px;
-        bottom: 18px;
-        width: 4px;
-        background: linear-gradient(180deg, var(--accent-start), transparent);
-        border-radius: 3px;
-      }
-      h1.title {
-        margin: 0 0 16px;
-        font-weight: 300;
-        font-size: clamp(44px, 10vw, 96px);
-        letter-spacing: 1px;
-      }
-      .lead {
-        margin: 0;
-        color: var(--muted);
-        font-size: clamp(14px, 2.2vw, 18px);
-        max-width: 62ch;
-      }
-
-      .projects {
-        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-        border: 1px solid rgba(255,255,255,0.06);
-        border-radius: 16px;
-        padding: 18px 18px 10px;
-      }
-      .projects h2 {
-        margin: 0 0 10px;
-        font-size: 24px;
-        font-weight: 500;
-      }
-      .projects .accent { position: relative; padding-left: 14px; }
-      .projects .accent::before {
-        content: "";
-        position: absolute;
-        left: 0; top: 2px; bottom: 2px; width: 4px;
-        background: linear-gradient(180deg, var(--accent-start), var(--accent-end));
-        border-radius: 4px;
-      }
-      .proj-list { list-style: none; padding: 8px 4px 4px; margin: 0; display: grid; gap: 8px; }
-      .proj-list a { display: block; padding: 10px 12px; color: var(--text); text-decoration: none; border-radius: 10px; border: 1px solid transparent; transition: background .15s ease, border-color .15s ease, color .15s ease; }
-      .proj-list a:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
-      .proj-list a .underline { border-bottom: 2px solid var(--line); padding-bottom: 2px; }
-      footer { color: #7d8797; font-size: 12px; margin-top: 32px; text-align: right; opacity:.85; }
-    </style>
+  <link rel="stylesheet" href="landing.css" />
+  <!-- Fallback for direct file viewing (without Vite dev server) -->
+  <link rel="stylesheet" href="public/landing.css" />
   </head>
   <body>
     <div class="wrap">
@@ -155,14 +32,68 @@
           </p>
         </section>
 
+        <!-- Sekcja O mnie -->
+        <section class="panel about" aria-labelledby="about-title">
+          <h2 id="about-title" class="accent">O mnie</h2>
+          <p style="margin: 0 0 8px; color: var(--muted);">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis, neque vitae blandit euismod, justo lacus
+            efficitur nibh, vitae accumsan magna lorem nec lorem. Suspendisse potenti. Integer id posuere arcu. Nullam mattis,
+            metus sed finibus mattis, orci mauris cursus sem, in commodo odio sapien at turpis.
+          </p>
+          <p style="margin: 0; color: var(--muted);">
+            Phasellus ut velit non ex gravida egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+            cubilia curae; Cras vitae varius sem, id rutrum odio. Donec pharetra, augue non volutpat dictum, sapien nisl
+            porttitor ex, vel auctor turpis lectus sed nibh.
+          </p>
+        </section>
+
+        <!-- Sekcja Umiejętności -->
+        <section class="panel skills" aria-labelledby="skills-title">
+          <h2 id="skills-title" class="accent">Umiejętności</h2>
+
+          <h3 class="group-title">Technologie</h3>
+          <div class="skills-grid">
+            <span class="skill-badge">C#</span>
+            <span class="skill-badge">.NET MAUI</span>
+            <span class="skill-badge">ASP.NET Core</span>
+            <span class="skill-badge">Blazor</span>
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">Entity Framework</span>
+            <span class="skill-badge">LINQ</span>
+            <span class="skill-badge">HTML</span>
+            <span class="skill-badge">Python</span>
+          </div>
+
+          <h3 class="group-title">Narzędzia</h3>
+          <div class="skills-grid">
+            <span class="skill-badge">Azure DevOps</span>
+            <span class="skill-badge">Microsoft Office</span>
+            <span class="skill-badge">Issue Tracking</span>
+            <span class="skill-badge">Report Generation</span>
+          </div>
+
+          <h3 class="group-title">Kompetencje</h3>
+          <div class="skills-grid">
+            <span class="skill-badge">Technical Documentation</span>
+            <span class="skill-badge">Software Testing</span>
+            <span class="skill-badge">Problem‑Solving</span>
+            <span class="skill-badge">Customer Support</span>
+            <span class="skill-badge">English Language (Advanced)</span>
+            <span class="skill-badge">High Communication Skills</span>
+            <span class="skill-badge">Build Interdepartmental Connections</span>
+            <span class="skill-badge">Self‑Management</span>
+            <span class="skill-badge">Teamwork</span>
+          </div>
+        </section>
+
         <aside class="projects" aria-labelledby="projects-title">
           <h2 id="projects-title" class="accent">Projekty</h2>
           <ul class="proj-list">
-            <li><a href="#"><span class="underline">Domposer</span></a></li>
-            <li><a href="#"><span class="underline">Cookiemunch</span></a></li>
-            <li><a href="#"><span class="underline">Screen time converter</span></a></li>
-            <li><a href="#"><span class="underline">LED multi</span></a></li>
-            <li><a href="#"><span class="underline">inline.svg</span></a></li>
+            <li><a href="public/projects/ksef-mobile-app.html"><span class="underline">Ksef Mobile App</span></a></li>
+            <li><a href="public/projects/cloudflow-hr.html"><span class="underline">CloudFlow HR</span></a></li>
+            <li><a href="public/projects/foodbook-app.html"><span class="underline">Foodbook App</span></a></li>
+            <li><a href="public/projects/wms-project.html"><span class="underline">WMS Project</span></a></li>
+            <li><a href="public/projects/tictactoe-game.html"><span class="underline">TicTacToe game – mój pierwszy projekt</span></a></li>
           </ul>
         </aside>
       </main>
