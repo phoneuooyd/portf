@@ -112,13 +112,33 @@
         border-radius: 16px;
         padding: 18px 18px 10px;
       }
+      /* Uniwersalny panel (kartka) do sekcji takich jak "O mnie" */
+      .panel {
+        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        padding: 18px;
+      }
       .projects h2 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .panel h2 {
         margin: 0 0 10px;
         font-size: 24px;
         font-weight: 500;
       }
       .projects .accent { position: relative; padding-left: 14px; }
       .projects .accent::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 2px; bottom: 2px; width: 4px;
+        background: linear-gradient(180deg, var(--accent-start), var(--accent-end));
+        border-radius: 4px;
+      }
+      .panel .accent { position: relative; padding-left: 14px; }
+      .panel .accent::before {
         content: "";
         position: absolute;
         left: 0; top: 2px; bottom: 2px; width: 4px;
@@ -155,14 +175,29 @@
           </p>
         </section>
 
+        <!-- Sekcja O mnie -->
+        <section class="panel about" aria-labelledby="about-title">
+          <h2 id="about-title" class="accent">O mnie</h2>
+          <p style="margin: 0 0 8px; color: var(--muted);">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis, neque vitae blandit euismod, justo lacus
+            efficitur nibh, vitae accumsan magna lorem nec lorem. Suspendisse potenti. Integer id posuere arcu. Nullam mattis,
+            metus sed finibus mattis, orci mauris cursus sem, in commodo odio sapien at turpis.
+          </p>
+          <p style="margin: 0; color: var(--muted);">
+            Phasellus ut velit non ex gravida egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+            cubilia curae; Cras vitae varius sem, id rutrum odio. Donec pharetra, augue non volutpat dictum, sapien nisl
+            porttitor ex, vel auctor turpis lectus sed nibh.
+          </p>
+        </section>
+
         <aside class="projects" aria-labelledby="projects-title">
           <h2 id="projects-title" class="accent">Projekty</h2>
           <ul class="proj-list">
-            <li><a href="#"><span class="underline">Domposer</span></a></li>
-            <li><a href="#"><span class="underline">Cookiemunch</span></a></li>
-            <li><a href="#"><span class="underline">Screen time converter</span></a></li>
-            <li><a href="#"><span class="underline">LED multi</span></a></li>
-            <li><a href="#"><span class="underline">inline.svg</span></a></li>
+            <li><a href="projects/ksef-mobile-app.html"><span class="underline">Ksef Mobile App</span></a></li>
+            <li><a href="projects/cloudflow-hr.html"><span class="underline">CloudFlow HR</span></a></li>
+            <li><a href="projects/foodbook-app.html"><span class="underline">Foodbook App</span></a></li>
+            <li><a href="projects/wms-project.html"><span class="underline">WMS Project</span></a></li>
+            <li><a href="projects/tictactoe-game.html"><span class="underline">TicTacToe game – mój pierwszy projekt</span></a></li>
           </ul>
         </aside>
       </main>
