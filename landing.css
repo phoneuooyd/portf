@@ -1,0 +1,2 @@
+/* Proxy file to ensure styles load when opening index.html directly (file://) */
+@import url('./public/landing.css');

@@ -4,35 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TicTacToe — Mój pierwszy projekt</title>
-    <style>
-      body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; background:#0e1014; color:#eaeef7; }
-      .container{ max-width:900px; margin:0 auto; padding:32px 20px; }
-      a{ color:#e9d758; text-decoration:none; }
-      header{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
-      h1{ margin:24px 0 8px; font-weight:600; }
-      p{ color:#9aa3b2; }
-      .card{ background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px; }
-    </style>
+    <link rel="stylesheet" href="../landing.css" />
   </head>
   <body>
     <div class="container">
       <header>
-        <a href="../index.html">← Powrót</a>
+  <a href="../../index.html">← Powrót</a>
         <span>TicTacToe — mój pierwszy projekt</span>
       </header>
 
       <h1>TicTacToe — mój pierwszy projekt</h1>
-      <div class="card">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel orci vitae justo rhoncus porta. Nam eu lectus
-          sit amet leo gravida fermentum et vitae neque. Sed volutpat, lorem vel pretium vulputate, purus ipsum dictum urna,
-          nec vehicula mi magna sed magna. Sed a sollicitudin ligula, eget auctor ante.
-        </p>
-        <p>
-          Etiam pharetra, odio in porttitor tincidunt, neque magna aliquet mi, at bibendum ipsum eros non augue. Nulla vitae
-          nibh sed tellus laoreet dapibus. Donec sed mollis turpis.
-        </p>
-      </div>
+
+      <!-- Galeria u góry -->
+      <section class="panel panel--lg">
+        <div class="gallery">
+          <figure>
+            <img src="https://placehold.co/600x360/0e1014/eaeef7?text=TicTacToe" alt="Gra TicTacToe" />
+            <figcaption>Widok gry</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Opis pod galerią -->
+      <section class="panel">
+        <h2 class="accent">Cel aplikacji</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel orci vitae justo rhoncus porta.</p>
+      </section>
+
+      <!-- Dół: 2 kolumny -->
+      <section class="columns">
+        <div class="panel">
+          <h2 class="accent">Technologie</h2>
+          <div class="skills-grid">
+            <span class="skill-badge">HTML</span>
+            <span class="skill-badge">C#</span>
+            <span class="skill-badge">Blazor</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="accent">Plan rozwoju</h2>
+          <ul class="roadmap">
+            <li class="done">Tryb lokalny</li>
+            <li class="wip">Prosty AI przeciwnik</li>
+            <li>Gra online</li>
+          </ul>
+        </div>
+      </section>
     </div>
   </body>
 </html>
