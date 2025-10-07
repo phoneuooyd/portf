@@ -18,9 +18,9 @@
       <!-- Galeria u góry -->
       <section class="panel panel--lg">
         <div class="gallery">
-          <figure>
-            <img src="https://placehold.co/600x360/0e1014/eaeef7?text=TicTacToe" alt="Gra TicTacToe" />
-            <figcaption>Widok gry</figcaption>
+          <figure style="width:100%">
+            <div id="live-ttt"></div>
+            <figcaption>Interaktywny podgląd gry</figcaption>
           </figure>
         </div>
       </section>
@@ -37,8 +37,8 @@
           <h2 class="accent">Technologie</h2>
           <div class="skills-grid">
             <span class="skill-badge">HTML</span>
-            <span class="skill-badge">C#</span>
-            <span class="skill-badge">Blazor</span>
+            <span class="skill-badge">CSS</span>
+            <span class="skill-badge">JavaScript</span>
           </div>
         </div>
         <div class="panel">
@@ -51,5 +51,28 @@
         </div>
       </section>
     </div>
+    <script>
+      (function(){
+        const paths = [
+          '../components/tictactoe/tictactoe.js',
+          '../../public/components/tictactoe/tictactoe.js',
+          '../../components/tictactoe/tictactoe.js',
+          './components/tictactoe/tictactoe.js',
+          '/portf/components/tictactoe/tictactoe.js',
+          '/components/tictactoe/tictactoe.js'
+        ];
+        function load(i){
+          if(i>=paths.length){ console.error('TicTacToe: nie udało się załadować skryptu komponentu'); return; }
+          var s=document.createElement('script');
+          s.src=paths[i];
+          s.onload=function(){
+            if(window.TicTacToeComponent){ window.TicTacToeComponent.mount('#live-ttt'); }
+          };
+          s.onerror=function(){ s.remove(); load(i+1); };
+          document.body.appendChild(s);
+        }
+        load(0);
+      })();
+    </script>
   </body>
-</html>
+  </html>

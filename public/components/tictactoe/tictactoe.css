@@ -1,0 +1,12 @@
+:root{--ttt-bg:#164747;--ttt-fg:#fdebd2;--ttt-line:#fdebd2;--ttt-cell:#e2f7f7}
+.tictactoe{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue,Arial,"Apple Color Emoji","Segoe UI Emoji";display:flex;gap:16px;align-items:flex-start;justify-content:center;width:100%;max-width:980px;margin:0 auto}
+.tictactoe .left{display:flex;flex-direction:column;align-items:center}
+.tictactoe .board{width:min(420px,80vw);aspect-ratio:1;background:var(--ttt-bg);border:2px solid var(--ttt-line);display:grid;grid-template-columns:repeat(3,1fr);gap:2%;padding:2%}
+.tictactoe .cell{background:var(--ttt-cell);display:flex;align-items:center;justify-content:center;cursor:pointer;background-size:72% 72%;background-repeat:no-repeat;background-position:center}
+.tictactoe .status{width:100%;max-width:420px;background:var(--ttt-bg);color:var(--ttt-fg);border:1px solid var(--ttt-line);text-align:center;font-size:18px;padding:10px 8px;margin-bottom:8px}
+.tictactoe .toolbar{display:flex;gap:8px;margin-bottom:12px}
+.tictactoe button{background:var(--ttt-bg);color:var(--ttt-fg);border:1px solid var(--ttt-line);padding:8px 12px;border-radius:6px;cursor:pointer}
+.tictactoe .score{width:200px;background:var(--ttt-bg);color:var(--ttt-fg);border:2px solid var(--ttt-line)}
+.tictactoe .score .head{padding:10px;border-bottom:1px solid var(--ttt-line);text-align:center;font-weight:600}
+.tictactoe .score .player{display:flex;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--ttt-line)}
+@media (max-width:900px){.tictactoe{flex-direction:column;align-items:center;justify-content:center}.tictactoe .score{width:100%;max-width:420px}}

@@ -190,12 +190,14 @@ p{ color:#9aa3b2; }
 .card{ background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px; }
 
 /* Odstępy między panelami na podstronach */
-.panel + .panel { margin-top: 16px; }
+.panel + .panel { margin-top: 0px; }
 .panel + .columns { margin-top: 16px; } /* odstęp między opisem a Technologiami/Roadmapą */
 
 /* Galeria obrazów na podstronach */
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
 .gallery figure { margin: 0; }
+/* Jeśli galeria ma tylko jeden element, rozciągnij go na całą szerokość */
+.gallery > figure:only-child { grid-column: 1 / -1; }
 .gallery img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); }
 .gallery figcaption { margin-top: 6px; color: var(--muted); font-size: 12px; }
 
