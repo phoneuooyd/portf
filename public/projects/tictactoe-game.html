@@ -3,17 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TicTacToe — Mój pierwszy projekt</title>
-    <link rel="stylesheet" href="../landing.css" />
+  <title data-i18n="page.title">TicTacToe — Mój pierwszy projekt</title>
+  <link rel="stylesheet" href="../landing.css" />
+  <script src="../i18n.js"></script>
   </head>
   <body>
     <div class="container">
       <header>
-  <a href="../../index.html">← Powrót</a>
-        <span>TicTacToe — mój pierwszy projekt</span>
+    <a href="../../index.html" data-i18n="nav.back">← Powrót</a>
+        <span data-i18n="proj.name">TicTacToe — mój pierwszy projekt</span>
+        <select id="langSwitcher" class="lang-switch" style="margin-left:auto" data-i18n-attr-title="lang.title" title="Język / Language">
+          <option value="pl">Polski</option>
+          <option value="en">English</option>
+        </select>
       </header>
 
-  <h1><img class="proj-icon" src="../../icons/TicTacToeIcon.png" alt=""/>TicTacToe — mój pierwszy projekt</h1>
+  <h1><img class="proj-icon" src="../../icons/TicTacToeIcon.png" alt=""/><span data-i18n="proj.name">TicTacToe — mój pierwszy projekt</span></h1>
 
       <!-- Galeria u góry -->
       <section class="panel panel--lg">
@@ -27,18 +32,14 @@
 
       <!-- Opis pod galerią -->
       <section class="panel">
-        <h2 class="accent">Cel aplikacji</h2>
-        <p>
-          Prosty projekt demonstracyjny gry kółko‑krzyżyk w przeglądarce: interaktywny podgląd, lokalna rozgrywka
-          dla dwóch osób, reset partii i zliczanie wyników. Planowane rozszerzenia: przeciwnik AI oraz gra online.
-          Jest to mój pierwszy projekt, który utworzyłem w roku 2021 przed rozpoczęciem studiów na WSB we Wrocławiu.
-        </p>
+        <h2 class="accent" data-i18n="sec.purpose">Cel aplikacji</h2>
+        <p data-i18n="purpose.text">Prosty projekt demonstracyjny gry kółko‑krzyżyk w przeglądarce: interaktywny podgląd, lokalna rozgrywka dla dwóch osób, reset partii i zliczanie wyników. Planowane rozszerzenia: przeciwnik AI oraz gra online. Jest to mój pierwszy projekt, który utworzyłem w roku 2021 przed rozpoczęciem studiów na WSB we Wrocławiu.</p>
       </section>
 
       <!-- Dół: 2 kolumny -->
       <section class="columns">
         <div class="panel">
-          <h2 class="accent">Technologie</h2>
+          <h2 class="accent" data-i18n="sec.tech">Technologie</h2>
           <div class="skills-grid">
             <span class="skill-badge">HTML</span>
             <span class="skill-badge">CSS</span>
@@ -46,13 +47,38 @@
           </div>
         </div>
         <div class="panel">
-          <h2 class="accent">Plan rozwoju</h2>
+          <h2 class="accent" data-i18n="sec.roadmap">Plan rozwoju</h2>
           <ul class="roadmap">
-            <li>Przeciwnik AI</li>
+            <li data-i18n="road.ttt.ai">Przeciwnik AI</li>
           </ul>
         </div>
       </section>
     </div>
+    <script>
+      SiteI18n.apply({
+        pl: {
+          'page.title': 'TicTacToe — Mój pierwszy projekt',
+          'proj.name': 'TicTacToe — mój pierwszy projekt',
+          'lang.title': 'Język / Language',
+          'sec.purpose': 'Cel aplikacji',
+          'purpose.text': 'Prosty projekt demonstracyjny gry kółko‑krzyżyk w przeglądarce: interaktywny podgląd, lokalna rozgrywka dla dwóch osób, reset partii i zliczanie wyników. Planowane rozszerzenia: przeciwnik AI oraz gra online. Jest to mój pierwszy projekt, który utworzyłem w roku 2021 przed rozpoczęciem studiów na WSB we Wrocławiu.',
+          'sec.tech': 'Technologie',
+          'sec.roadmap': 'Plan rozwoju',
+          'road.ttt.ai': 'Przeciwnik AI'
+        },
+        en: {
+          'page.title': 'TicTacToe — My first project',
+          'proj.name': 'TicTacToe — my first project',
+          'lang.title': 'Language',
+          'sec.purpose': 'Purpose',
+          'purpose.text': 'A simple demo project of tic‑tac‑toe in the browser: interactive preview, local two‑player game, reset and score tracking. Planned extensions: AI opponent and online play. This is my first project created in 2021 before starting studies at WSB in Wrocław.',
+          'sec.tech': 'Technologies',
+          'sec.roadmap': 'Roadmap',
+          'road.ttt.ai': 'AI opponent'
+        }
+      });
+      SiteI18n.init();
+    </script>
     <script>
       (function(){
         const paths = [

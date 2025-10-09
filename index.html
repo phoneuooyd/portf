@@ -12,17 +12,17 @@
   </head>
   <body>
     <div class="wrap">
-      <div class="top-actions" aria-label="Szybkie akcje">
-        <button id="copyEmail" class="icon-btn" title="Kopiuj e‑mail do schowka">
+      <div class="top-actions" data-i18n-attr-aria-label="top.actionsLabel" aria-label="Szybkie akcje">
+        <button id="copyEmail" class="icon-btn" data-i18n-attr-title="copy.tooltip" title="Kopiuj e‑mail do schowka">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
         </button>
-        <a class="icon-link" href="https://github.com/phoneuooyd" target="_blank" rel="noopener" title="GitHub">
+        <a class="icon-link" href="https://github.com/phoneuooyd" target="_blank" rel="noopener" data-i18n-attr-title="social.github" title="GitHub">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.21.68-.47v-1.7c-2.78.6-3.37-1.19-3.37-1.19-.46-1.16-1.12-1.47-1.12-1.47-.92-.63.07-.62.07-.62 1.02.07 1.56 1.05 1.56 1.05.9 1.56 2.36 1.11 2.94.85.09-.66.35-1.11.64-1.37-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.02A9.5 9.5 0 0 1 12 6.8c.85 0 1.7.11 2.49.33 1.9-1.29 2.74-1.02 2.74-1.02.56 1.38.21 2.41.11 2.66.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .26.18.57.69.47A10 10 0 0 0 12 2Z"/></svg>
         </a>
-        <a class="icon-link" href="https://www.linkedin.com/in/p-przybyszewski2709" target="_blank" rel="noopener" title="LinkedIn">
+        <a class="icon-link" href="https://www.linkedin.com/in/p-przybyszewski2709" target="_blank" rel="noopener" data-i18n-attr-title="social.linkedin" title="LinkedIn">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 7 1.64a2.44 2.44 0 0 1-.06 4.86ZM3.65 8.25h3.98v12.1H3.65V8.25Zm6.2 0h3.82v1.65h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.65 4.77 6.09v6.56h-3.98v-5.81c0-1.39-.02-3.19-1.94-3.19-1.94 0-2.24 1.52-2.24 3.09v5.91H9.85V8.25Z"/></svg>
         </a>
-        <select id="langSwitcher" title="Język / Language" class="lang-switch" style="margin-left: 8px;">
+        <select id="langSwitcher" class="lang-switch" style="margin-left: 8px;" data-i18n-attr-title="lang.title" title="Język / Language">
           <option value="pl">Polski</option>
           <option value="en">English</option>
         </select>
@@ -129,9 +129,12 @@
         pl: {
           'page.title': 'Portfolio – Strona powitalna',
           'top.actionsLabel': 'Szybkie akcje',
+          'lang.title': 'Język / Language',
           'copy.tooltip': 'Kopiuj e‑mail do schowka',
           'copy.success': 'Skopiowano do schowka',
           'copy.fail': 'Nie udało się skopiować',
+          'social.github': 'GitHub',
+          'social.linkedin': 'LinkedIn',
           'welcome.title': 'Witaj',
           'welcome.lead': 'Nazywam się Przemysław Przybyszewski i tworzę projekty, które starają się rozwiązywać problemy rzeczywiste oraz rozwijać moje umiejętności. Na co dzień pracuję jako inżynier testów, a po godzinach rozwijam projekty w ekosystemie .NET, szczególnie w Blazorze i .NET MAUI. Lubię projektować aplikacje, tworzyć koncepcję, architekturę, design i brać udział w całym cyklu życia oprogramowania.',
           'about.title': 'O mnie',
@@ -195,9 +198,12 @@
         en: {
           'page.title': 'Portfolio – Welcome',
           'top.actionsLabel': 'Quick actions',
+          'lang.title': 'Language',
           'copy.tooltip': 'Copy e‑mail to clipboard',
           'copy.success': 'Copied to clipboard',
           'copy.fail': 'Copy failed',
+          'social.github': 'GitHub',
+          'social.linkedin': 'LinkedIn',
           'welcome.title': 'Welcome',
           'welcome.lead': "My name is Przemysław Przybyszewski and I build projects that aim to solve real-world problems while growing my skills. I work as a test engineer by day, and after hours I develop projects in the .NET ecosystem, especially Blazor and .NET MAUI. I enjoy designing applications—concept, architecture, and UI—and taking part in the entire software lifecycle.",
           'about.title': 'About me',
