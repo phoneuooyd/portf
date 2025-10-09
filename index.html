@@ -130,7 +130,7 @@
           'page.title': 'Portfolio – Strona powitalna',
           'top.actionsLabel': 'Szybkie akcje',
           'copy.tooltip': 'Kopiuj e‑mail do schowka',
-          'copy.success': 'Skopiowano!',
+          'copy.success': 'Skopiowano do schowka',
           'copy.fail': 'Nie udało się skopiować',
           'welcome.title': 'Witaj',
           'welcome.lead': 'Nazywam się Przemysław Przybyszewski i tworzę projekty, które starają się rozwiązywać problemy rzeczywiste oraz rozwijać moje umiejętności. Na co dzień pracuję jako inżynier testów, a po godzinach rozwijam projekty w ekosystemie .NET, szczególnie w Blazorze i .NET MAUI. Lubię projektować aplikacje, tworzyć koncepcję, architekturę, design i brać udział w całym cyklu życia oprogramowania.',
@@ -196,7 +196,7 @@
           'page.title': 'Portfolio – Welcome',
           'top.actionsLabel': 'Quick actions',
           'copy.tooltip': 'Copy e‑mail to clipboard',
-          'copy.success': 'Copied!',
+          'copy.success': 'Copied to clipboard',
           'copy.fail': 'Copy failed',
           'welcome.title': 'Welcome',
           'welcome.lead': "My name is Przemysław Przybyszewski and I build projects that aim to solve real-world problems while growing my skills. I work as a test engineer by day, and after hours I develop projects in the .NET ecosystem, especially Blazor and .NET MAUI. I enjoy designing applications—concept, architecture, and UI—and taking part in the entire software lifecycle.",
@@ -266,9 +266,14 @@
       SiteI18n.apply(I18N_DICT);
       SiteI18n.init();
 
-      // Copy e-mail logic with i18n feedback
+      // Copy e-mail logic with i18n feedback + transient tooltip bubble
       const EMAIL = 'p.przybyszewski2709@gmail.com';
       const btn = document.getElementById('copyEmail');
+      // Ensure initial title matches current language
+      if (btn) {
+        const lang0 = SiteI18n.currentLang();
+        btn.setAttribute('title', SiteI18n.t('copy.tooltip', lang0));
+      }
       btn?.addEventListener('click', async () => {
         let ok = false;
         try {
@@ -285,9 +290,31 @@
         }
         const lang = SiteI18n.currentLang();
         const t = (k)=>SiteI18n.t(k, lang);
-        btn.setAttribute('title', ok ? t('copy.success') : t('copy.fail'));
+        // Update title for accessibility; show visual tooltip bubble
+        const msg = ok ? t('copy.success') : t('copy.fail');
+        btn.setAttribute('title', msg);
+        // Create bubble
+        const bubble = document.createElement('div');
+        bubble.className = 'tooltip-bubble';
+        bubble.textContent = msg;
+        document.body.appendChild(bubble);
+        // Position bubble centered above the button
+  const r = btn.getBoundingClientRect();
+  const top = Math.max(r.top - 10, 8); // fixed coords, relative to viewport
+  const left = r.left + r.width/2;
+        bubble.style.top = `${top}px`;
+        bubble.style.left = `${left}px`;
+        // Animate in
+        requestAnimationFrame(() => bubble.classList.add('show'));
+        // Also flash subtle background on the button
         btn.style.background = ok ? 'rgba(135, 231, 158, 0.25)' : 'rgba(231, 135, 135, 0.25)';
-        setTimeout(() => { btn.style.background = ''; btn.setAttribute('title', t('copy.tooltip')); }, 1400);
+        // Cleanup after delay
+        setTimeout(() => {
+          bubble.classList.remove('show');
+          setTimeout(() => bubble.remove(), 180);
+          btn.style.background = '';
+          btn.setAttribute('title', t('copy.tooltip'));
+        }, 1400);
       });
     </script>
   </body>

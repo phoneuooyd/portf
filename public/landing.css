@@ -178,6 +178,41 @@ h1.title {
 .proj-list a .underline { border-bottom: 2px solid var(--line); padding-bottom: 2px; }
 footer { color: #7d8797; font-size: 12px; margin-top: 32px; text-align: right; opacity:.85; }
 
+/* Small transient tooltip bubble (used for copy notifications) */
+.tooltip-bubble {
+  position: fixed; /* positioned via JS using getBoundingClientRect */
+  z-index: 10000;
+  background: rgba(24, 26, 32, 0.95);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.2;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -8px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+.tooltip-bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 10px; height: 10px;
+  background: rgba(24, 26, 32, 0.95);
+  border-left: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  transform-origin: center;
+  rotate: 45deg;
+}
+.tooltip-bubble.show {
+  opacity: 1;
+  transform: translate(-50%, -14px);
+}
+
 /* Sekcja umiejętności */
 .skills .group-title {
   margin: 8px 0 6px;
