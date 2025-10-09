@@ -295,7 +295,7 @@ p{ color:#9aa3b2; }
 .lightbox { position: fixed; inset: 0; z-index: 9999; }
 .lightbox__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(2px); }
 .lightbox__frame { position: absolute; inset: 0; display: grid; grid-template-rows: auto 1fr auto; align-items: center; justify-items: center; padding: 24px; }
-.lightbox__viewport { position: relative; width: min(1200px, 92vw); height: min(80vh, 900px); display:flex; align-items:center; justify-content:center; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
+.lightbox__viewport { position: relative; width: min(1320px, 94vw); height: min(86vh, 940px); display:flex; align-items:center; justify-content:center; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
 .lightbox__img { max-width: none; width: auto; height: auto; cursor: grab; user-select: none; will-change: transform; transition: transform 80ms ease-out; }
 .lightbox__caption { margin-top: 10px; color: var(--muted); font-size: 13px; text-align: center; }
 .lightbox__btn { position: absolute; top: 18px; background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.25); width: 40px; height: 40px; border-radius: 10px; cursor: pointer; }

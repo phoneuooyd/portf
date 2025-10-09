@@ -4,7 +4,8 @@
   // Singleton overlay + state
   let overlay, imgEl, captionEl, btnPrev, btnNext, btnClose, backdrop, vp;
   let currentList = []; let currentIndex = 0;
-  let scale=1, tx=0, ty=0, dragging=false, lastX=0, lastY=0;
+  // baseScale ensures the image initially fits viewport; zoomScale is user zoom on top
+  let baseScale=1, zoomScale=1, tx=0, ty=0, dragging=false, lastX=0, lastY=0;
 
   function ensureOverlay(){
     if(overlay) return;
@@ -28,8 +29,11 @@
     backdrop = overlay.querySelector('.lightbox__backdrop');
     vp = overlay.querySelector('.lightbox__viewport');
 
-    function applyTransform(){ imgEl.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`; }
-    function resetZoom(){ scale=1; tx=0; ty=0; applyTransform(); }
+    function applyTransform(){
+      const s = baseScale * zoomScale;
+      imgEl.style.transform = `translate(${tx}px, ${ty}px) scale(${s})`;
+    }
+    function resetZoom(){ zoomScale=1; tx=0; ty=0; applyTransform(); }
     function clampPan(){
       const rect = imgEl.getBoundingClientRect();
       const vpr = vp.getBoundingClientRect();
@@ -43,8 +47,24 @@
       if(!currentList.length) return;
       currentIndex = (index+currentList.length) % currentList.length;
       const item = currentList[currentIndex];
-      imgEl.src = item.src; imgEl.alt=item.alt||''; captionEl.textContent=item.caption||'';
-      resetZoom(); overlay.classList.remove('hidden'); document.body.style.overflow='hidden';
+      // Load image and compute baseScale to fit into viewport; show after load
+      imgEl.alt=item.alt||''; captionEl.textContent=item.caption||'';
+      const onLoad = () => {
+        // Guard: ensure we have actual dimensions
+        if (!imgEl.naturalWidth || !imgEl.naturalHeight) return;
+        const vpr = vp.getBoundingClientRect();
+        const scaleW = (vpr.width - 24) / imgEl.naturalWidth;
+        const scaleH = (vpr.height - 24) / imgEl.naturalHeight;
+        baseScale = Math.min(Math.min(scaleW, scaleH), 4);
+        zoomScale = 1; tx = 0; ty = 0; applyTransform();
+        overlay.classList.remove('hidden'); document.body.style.overflow='hidden';
+      };
+      const onError = () => { overlay.classList.remove('hidden'); captionEl.textContent = (captionEl.textContent||'') + ' (nie udało się wczytać obrazu)'; };
+      imgEl.onload = onLoad;
+      imgEl.onerror = onError;
+      imgEl.src = item.src;
+      // If cached and already complete with valid size, trigger manually
+      if (imgEl.complete && imgEl.naturalWidth) onLoad();
     }
     function close(){ overlay.classList.add('hidden'); document.body.style.overflow=''; }
 
@@ -53,9 +73,22 @@
     btnClose.addEventListener('click', close);
     backdrop.addEventListener('click', close);
     window.addEventListener('keydown', (e)=>{ if(overlay.classList.contains('hidden')) return; if(e.key==='Escape') close(); if(e.key==='ArrowRight') show(currentIndex+1); if(e.key==='ArrowLeft') show(currentIndex-1); });
-    vp.addEventListener('wheel', (e)=>{ e.preventDefault(); const delta=-Math.sign(e.deltaY)*0.2; scale=Math.min(3, Math.max(1, scale+delta)); clampPan(); applyTransform(); }, {passive:false});
-    imgEl.addEventListener('dblclick', ()=>{ scale = scale>1 ? 1 : 2; clampPan(); applyTransform(); });
-    function startDrag(e){ if(scale===1) return; dragging=true; lastX=(e.touches?e.touches[0].clientX:e.clientX); lastY=(e.touches?e.touches[0].clientY:e.clientY); imgEl.style.cursor='grabbing'; }
+    vp.addEventListener('wheel', (e)=>{
+      e.preventDefault();
+      const delta = -Math.sign(e.deltaY) * 0.2;
+      const prev = zoomScale;
+      zoomScale = Math.min(3, Math.max(1, zoomScale + delta));
+      // Optional: zoom to cursor — adjust pan so point under cursor stays roughly in place
+      const vpr = vp.getBoundingClientRect();
+      const cx = e.clientX - (vpr.left + vpr.width/2);
+      const cy = e.clientY - (vpr.top + vpr.height/2);
+      const factor = zoomScale/prev;
+      tx = cx - (cx - tx) * factor;
+      ty = cy - (cy - ty) * factor;
+      clampPan(); applyTransform();
+    }, {passive:false});
+    imgEl.addEventListener('dblclick', ()=>{ zoomScale = zoomScale>1 ? 1 : 2; clampPan(); applyTransform(); });
+    function startDrag(e){ if(zoomScale===1) return; dragging=true; lastX=(e.touches?e.touches[0].clientX:e.clientX); lastY=(e.touches?e.touches[0].clientY:e.clientY); imgEl.style.cursor='grabbing'; }
     function moveDrag(e){ if(!dragging) return; const x=(e.touches?e.touches[0].clientX:e.clientX), y=(e.touches?e.touches[0].clientY:e.clientY); tx += x-lastX; ty += y-lastY; lastX=x; lastY=y; clampPan(); applyTransform(); }
     function endDrag(){ dragging=false; imgEl.style.cursor='grab'; }
     imgEl.addEventListener('mousedown', startDrag); window.addEventListener('mousemove', moveDrag); window.addEventListener('mouseup', endDrag);
