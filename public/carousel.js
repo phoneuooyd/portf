@@ -34,7 +34,7 @@
     viewport.appendChild(btnPrev); 
     viewport.appendChild(btnNext);
 
-    let index=0; let w=0; let resizeId;
+    let index=0; let w=0; let resizeId; let wasSwipe=false;
     function measure(){ w = viewport.clientWidth; track.style.width = (list.length * w)+'px'; Array.from(track.children).forEach(sl=>{ sl.style.width=w+'px'; }); go(index, false); }
       function go(i, animate=true){ 
         index=(i+list.length)%list.length; 
@@ -42,6 +42,8 @@
         track.style.transform='translateX(' + (-index*w) + 'px)'; 
         bullets.forEach((b,bi)=>{ b.classList.toggle('is-active', bi===index); }); 
         thumbBtns.forEach((b,bi)=>{ b.classList.toggle('is-active', bi===index); });
+        // expose current index for other components
+        root.dataset.index = String(index);
         // auto-scroll miniatur do aktywnej
         const activeThumb = thumbBtns[index];
         if(activeThumb && thumbs.scrollWidth>thumbs.clientWidth){ const r=activeThumb.getBoundingClientRect(); const pr=thumbs.getBoundingClientRect(); if(r.left<pr.left||r.right>pr.right){ thumbs.scrollTo({left: activeThumb.offsetLeft - pr.width/2 + activeThumb.offsetWidth/2, behavior:'smooth'}); } }
@@ -49,18 +51,29 @@
     btnPrev.addEventListener('click', ()=>go(index-1));
     btnNext.addEventListener('click', ()=>go(index+1));
     bullets.forEach((b,i)=>b.addEventListener('click', ()=>go(i)));
-    thumbBtns.forEach((b,i)=>b.addEventListener('click', ()=>go(i)));
+  thumbBtns.forEach((b,i)=>b.addEventListener('click', (e)=>{ e.preventDefault(); e.stopPropagation(); go(i); }));
 
     // swipe
     let startX=0, dx=0, dragging=false;
     viewport.addEventListener('pointerdown', (e)=>{ 
       // Jeśli klik na strzałce, nie zaczynaj drag
       if(e.target.closest('.carousel__btn')) return; 
-      dragging=true; startX=e.clientX; dx=0; viewport.setPointerCapture(e.pointerId); track.style.transition='none'; 
+      dragging=true; wasSwipe=false; startX=e.clientX; dx=0; viewport.setPointerCapture(e.pointerId); track.style.transition='none'; 
     });
-    viewport.addEventListener('pointermove', (e)=>{ if(!dragging) return; dx=e.clientX-startX; track.style.transform='translateX(' + ((-index*w)+dx) + 'px)'; });
+    viewport.addEventListener('pointermove', (e)=>{ if(!dragging) return; dx=e.clientX-startX; if(Math.abs(dx)>6) wasSwipe=true; track.style.transform='translateX(' + ((-index*w)+dx) + 'px)'; });
     function end(){ if(!dragging) return; dragging=false; if(Math.abs(dx)>w*0.2){ go(index+(dx<0?1:-1)); } else { go(index); } }
     viewport.addEventListener('pointerup', end); viewport.addEventListener('pointercancel', end); viewport.addEventListener('pointerleave', end);
+
+    // Kliknięcie w główny obraz (viewport) otwiera powiększenie jak klik w miniaturę
+    viewport.addEventListener('click', (e)=>{
+      if(e.target.closest('.carousel__btn')) return; // strzałki nie otwierają lightboxa
+      if(wasSwipe) return; // ignoruj klik po gestach przesuwania
+      // jeśli kliknięto bezpośrednio w obraz w slajdzie, delegacja z gallery.js to obsłuży
+      if(e.target.closest('.carousel__slide img')) return;
+      const imgs = track.querySelectorAll('img');
+      const curr = imgs[index];
+      if(curr){ curr.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
+    });
 
     window.addEventListener('resize', ()=>{ clearTimeout(resizeId); resizeId=setTimeout(measure, 80); });
     measure();

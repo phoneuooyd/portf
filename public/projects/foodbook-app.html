@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foodbook App — Projekt</title>
+  <title data-i18n="page.title">Foodbook App — Projekt</title>
     <link rel="stylesheet" href="../landing.css" />
+  <script src="../i18n.js"></script>
   </head>
   <body>
     <div class="container">
       <header>
-  <a href="../../index.html">← Powrót</a>
-        <span>Foodbook App</span>
+  <a href="../../index.html" data-i18n="nav.back">← Powrót</a>
+        <span data-i18n="proj.name">Foodbook App</span>
+        <select id="langSwitcher" class="lang-switch" style="margin-left:auto">
+          <option value="pl">Polski</option>
+          <option value="en">English</option>
+        </select>
       </header>
 
   <h1><img class="proj-icon" src="../../icons/FoodbookAppIcon.png" alt=""/>Foodbook App</h1>
@@ -27,8 +32,8 @@
 
       <!-- Opis pod galerią -->
       <section class="panel">
-        <h2 class="accent">Cel aplikacji</h2>
-        <p>
+        <h2 class="accent" data-i18n="sec.purpose">Cel aplikacji</h2>
+        <p data-i18n="purpose.text">
           Aplikacja do szybkiego planowania diety, układania jadłospisów i zarządzania listą zakupów.
           Pozwala katalogować przepisy, liczyć makroskładniki i tworzyć tygodniowe plany posiłków. Posiada funkcję 
           pobierania składników odżywczych z bazy OpenFoodFacts. Aplikacja mobilna na .NET MAUI z lokalną bazą SQLite.
@@ -38,22 +43,57 @@
       <!-- Dół: 2 kolumny -->
       <section class="columns">
         <div class="panel">
-          <h2 class="accent">Technologie</h2>
+          <h2 class="accent" data-i18n="sec.tech">Technologie</h2>
           <div class="skills-grid">
-            <span class="skill-badge">C#</span>
-            <span class="skill-badge">.NET MAUI</span>
-            <span class="skill-badge">SQLite</span>
+            <span class="skill-badge" data-i18n="badge.tech.csharp">C#</span>
+            <span class="skill-badge" data-i18n="badge.tech.dotnetmaui">.NET MAUI</span>
+            <span class="skill-badge" data-i18n="badge.tech.sqlite">SQLite</span>
           </div>
         </div>
         <div class="panel">
-          <h2 class="accent">Plan rozwoju</h2>
+          <h2 class="accent" data-i18n="sec.roadmap">Plan rozwoju</h2>
           <ul class="roadmap">
-            <li class="wip">Konto użytkownika</li>
-            <li>Import/eksport przepisów</li>
-            <li>Zakupy i planowanie posiłków</li>
+            <li class="wip" data-i18n="road.fb.account">Konto użytkownika</li>
+            <li data-i18n="road.fb.io">Import/eksport przepisów</li>
+            <li data-i18n="road.fb.shopping">Zakupy i planowanie posiłków</li>
           </ul>
         </div>
       </section>
     </div>
   </body>
+  <script>
+    SiteI18n.apply({
+      pl: {
+        'page.title': 'Foodbook App — Projekt',
+        'nav.back': '← Powrót',
+        'proj.name': 'Foodbook App',
+        'sec.purpose': 'Cel aplikacji',
+        'purpose.text': 'Aplikacja do szybkiego planowania diety, układania jadłospisów i zarządzania listą zakupów. Pozwala katalogować przepisy, liczyć makroskładniki i tworzyć tygodniowe plany posiłków. Posiada funkcję pobierania składników odżywczych z bazy OpenFoodFacts. Aplikacja mobilna na .NET MAUI z lokalną bazą SQLite.',
+        'sec.tech': 'Technologie',
+        'sec.roadmap': 'Plan rozwoju',
+        'badge.tech.csharp': 'C#',
+        'badge.tech.dotnetmaui': '.NET MAUI',
+        'badge.tech.sqlite': 'SQLite',
+        'road.fb.account': 'Konto użytkownika',
+        'road.fb.io': 'Import/eksport przepisów',
+        'road.fb.shopping': 'Zakupy i planowanie posiłków'
+      },
+      en: {
+        'page.title': 'Foodbook App — Project',
+        'nav.back': '← Back',
+        'proj.name': 'Foodbook App',
+        'sec.purpose': 'Purpose',
+        'purpose.text': 'An app for fast diet planning, meal plans and shopping lists. Catalog recipes, calculate macros and build weekly plans. Includes nutrition data fetch from OpenFoodFacts. Mobile app built with .NET MAUI using a local SQLite database.',
+        'sec.tech': 'Technologies',
+        'sec.roadmap': 'Roadmap',
+        'badge.tech.csharp': 'C#',
+        'badge.tech.dotnetmaui': '.NET MAUI',
+        'badge.tech.sqlite': 'SQLite',
+        'road.fb.account': 'User account',
+        'road.fb.io': 'Import/Export recipes',
+        'road.fb.shopping': 'Shopping and meal planning'
+      }
+    });
+    SiteI18n.init();
+  </script>
   </html>

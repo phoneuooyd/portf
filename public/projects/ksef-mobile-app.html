@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KSeF Mobile App — Projekt</title>
+  <title data-i18n="page.title">KSeF Mobile App — Projekt</title>
     <link rel="stylesheet" href="../landing.css" />
+  <script src="../i18n.js"></script>
   </head>
   <body>
     <div class="container">
       <header>
-  <a href="../../index.html">← Powrót</a>
-        <span>KSeF Mobile App</span>
+  <a href="../../index.html" data-i18n="nav.back">← Powrót</a>
+        <span data-i18n="proj.name">KSeF Mobile App</span>
+        <select id="langSwitcher" class="lang-switch" style="margin-left:auto">
+          <option value="pl">Polski</option>
+          <option value="en">English</option>
+        </select>
       </header>
       <h1><img class="proj-icon" src="../../icons/KsefProjectIcon.png" alt=""/>KSeF Mobile App</h1>
 
@@ -46,8 +51,8 @@
 
       <!-- Opis celu aplikacji pod galerią -->
       <section class="panel">
-        <h2 class="accent">Cel aplikacji</h2>
-        <p>
+        <h2 class="accent" data-i18n="sec.purpose">Cel aplikacji</h2>
+        <p data-i18n="purpose.text">
           Praca inżynierska: system mobilny powiązany z KSeF wysyłek faktur VAT.
           Aplikacja napisana w .NET MAUI zapewnia sposób na szybkie utworzenie profilu własnej firmy oraz dodania bazy klientów, produktów i usług.
           Skupia się na prostocie obsługi i pracy w trybie mobilnym.
@@ -57,22 +62,22 @@
       <!-- Dół: 2 kolumny (Technologie | Plan rozwoju) -->
       <section class="columns">
         <div class="panel">
-          <h2 class="accent">Technologie</h2>
+          <h2 class="accent" data-i18n="sec.tech">Technologie</h2>
           <div class="skills-grid">
-            <span class="skill-badge">C#</span>
-            <span class="skill-badge">.NET MAUI</span>
-            <span class="skill-badge">REST API</span>
-            <span class="skill-badge">SQLite</span>
-            <span class="skill-badge">KseF</span>
+            <span class="skill-badge" data-i18n="badge.tech.csharp">C#</span>
+            <span class="skill-badge" data-i18n="badge.tech.dotnetmaui">.NET MAUI</span>
+            <span class="skill-badge" data-i18n="badge.tech.restapi">REST API</span>
+            <span class="skill-badge" data-i18n="badge.tech.sqlite">SQLite</span>
+            <span class="skill-badge" data-i18n="badge.tech.ksef">KSeF</span>
           </div>
         </div>
         <div class="panel">
-          <h2 class="accent">Plan rozwoju</h2>
+          <h2 class="accent" data-i18n="sec.roadmap">Plan rozwoju</h2>
           <ul class="roadmap">
-            <li class="done">MVP: Integracja z systemem KseF, wysyłka oraz pobieranie statusów faktur.</li>
-            <li class="wip">Integracja z nową wersją KseF v2, dostępnej od 08.2025r.</li>
-            <li>Nowe UI</li>
-            <li>Dodanie profilów użytkownika</li>
+            <li class="done" data-i18n="road.ksef.mvp">MVP: Integracja z systemem KSeF, wysyłka oraz pobieranie statusów faktur.</li>
+            <li class="wip" data-i18n="road.ksef.v2">Integracja z nową wersją KSeF v2, dostępnej od 08.2025r.</li>
+            <li data-i18n="road.ksef.ui">Nowe UI</li>
+            <li data-i18n="road.ksef.profiles">Dodanie profilów użytkownika</li>
           </ul>
         </div>
       </section>
@@ -80,4 +85,45 @@
   </body>
   <script src="../carousel.js"></script>
   <script src="../gallery.js"></script>
+  <script>
+    SiteI18n.apply({
+      pl: {
+        'page.title': 'KSeF Mobile App — Projekt',
+        'nav.back': '← Powrót',
+        'proj.name': 'KSeF Mobile App',
+        'sec.purpose': 'Cel aplikacji',
+        'purpose.text': 'Praca inżynierska: system mobilny powiązany z KSeF wysyłek faktur VAT. Aplikacja napisana w .NET MAUI zapewnia sposób na szybkie utworzenie profilu własnej firmy oraz dodania bazy klientów, produktów i usług. Skupia się na prostocie obsługi i pracy w trybie mobilnym.',
+        'sec.tech': 'Technologie',
+        'sec.roadmap': 'Plan rozwoju',
+        'badge.tech.csharp': 'C#',
+        'badge.tech.dotnetmaui': '.NET MAUI',
+        'badge.tech.restapi': 'REST API',
+        'badge.tech.sqlite': 'SQLite',
+        'badge.tech.ksef': 'KSeF',
+        'road.ksef.mvp': 'MVP: Integracja z systemem KSeF, wysyłka oraz pobieranie statusów faktur.',
+        'road.ksef.v2': 'Integracja z nową wersją KSeF v2, dostępnej od 08.2025r.',
+        'road.ksef.ui': 'Nowe UI',
+        'road.ksef.profiles': 'Dodanie profilów użytkownika'
+      },
+      en: {
+        'page.title': 'KSeF Mobile App — Project',
+        'nav.back': '← Back',
+        'proj.name': 'KSeF Mobile App',
+        'sec.purpose': 'Purpose',
+        'purpose.text': 'Engineering thesis: a mobile system integrated with KSeF for sending VAT invoices. Built with .NET MAUI, it enables quick setup of a company profile and adding customers, products, and services. Focused on simplicity and mobile-first usage.',
+        'sec.tech': 'Technologies',
+        'sec.roadmap': 'Roadmap',
+        'badge.tech.csharp': 'C#',
+        'badge.tech.dotnetmaui': '.NET MAUI',
+        'badge.tech.restapi': 'REST API',
+        'badge.tech.sqlite': 'SQLite',
+        'badge.tech.ksef': 'KSeF',
+        'road.ksef.mvp': 'MVP: Integrate with KSeF, send invoices and fetch their statuses.',
+        'road.ksef.v2': 'Integration with the new KSeF v2 (from 08/2025).',
+        'road.ksef.ui': 'New UI',
+        'road.ksef.profiles': 'Add user profiles'
+      }
+    });
+    SiteI18n.init();
+  </script>
 </html>

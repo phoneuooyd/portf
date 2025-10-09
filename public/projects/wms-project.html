@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WMS Project — Projekt</title>
+    <title data-i18n="page.title">WMS Project — Projekt</title>
     <link rel="stylesheet" href="../landing.css" />
+    <script src="../i18n.js"></script>
   </head>
   <body>
     <div class="container">
       <header>
-  <a href="../../index.html">← Powrót</a>
-        <span>WMS Project</span>
+  <a href="../../index.html" data-i18n="nav.back">← Powrót</a>
+        <span data-i18n="proj.name">WMS Project</span>
+        <select id="langSwitcher" class="lang-switch" style="margin-left:auto">
+          <option value="pl">Polski</option>
+          <option value="en">English</option>
+        </select>
       </header>
 
   <h1><img class="proj-icon" src="../../icons/WMSProjektIcon.png" alt=""/>WMS Project</h1>
@@ -27,8 +32,8 @@
 
       <!-- Opis pod galerią -->
       <section class="panel">
-        <h2 class="accent">Cel aplikacji</h2>
-        <p>
+        <h2 class="accent" data-i18n="sec.purpose">Cel aplikacji</h2>
+        <p data-i18n="purpose.text">
           System zarządzania magazynem (WMS) stworzony w krótkim czasie (ok. tydzień) w technologii WinForms.
           Obejmuje podstawowe operacje CRUD do ewidencjonowania stanu magazynowego samochodów (oraz informacji o samochodach).
           Aplikacja desktopowa na .NET Framework do pracy w sieci lokalnej.
@@ -38,21 +43,63 @@
       <!-- Dół: 2 kolumny -->
       <section class="columns">
         <div class="panel">
-          <h2 class="accent">Technologie</h2>
+          <h2 class="accent" data-i18n="sec.tech">Technologie</h2>
           <div class="skills-grid">
-            <span class="skill-badge">C#</span>
-            <span class="skill-badge">WinForms</span>
-            <span class="skill-badge">.NET Framework</span>
-            <span class="skill-badge">MS SQL Server</span>
+            <span class="skill-badge" data-i18n="badge.tech.csharp">C#</span>
+            <span class="skill-badge" data-i18n="badge.tech.winforms">WinForms</span>
+            <span class="skill-badge" data-i18n="badge.tech.dotnetfw">.NET Framework</span>
+            <span class="skill-badge" data-i18n="badge.tech.mssql">MS SQL Server</span>
           </div>
         </div>
         <div class="panel">
-          <h2 class="accent">Plan rozwoju</h2>
+          <h2 class="accent" data-i18n="sec.roadmap">Plan rozwoju</h2>
           <ul class="roadmap">
-            <li class="done">Przepisanie na WPF</li>
+            <li class="done" data-i18n="road.wms.wpf">Przepisanie na WPF</li>
           </ul>
         </div>
       </section>
     </div>
   </body>
-</html>
+  <script>
+    SiteI18n.apply({
+      pl: {
+        'page.title': 'WMS Project — Projekt',
+        'nav.back': '← Powrót',
+        'proj.name': 'WMS Project',
+        'sec.purpose': 'Cel aplikacji',
+        'purpose.text': 'System zarządzania magazynem (WMS) stworzony w krótkim czasie (ok. tydzień) w technologii WinForms. Obejmuje podstawowe operacje CRUD do ewidencjonowania stanu magazynowego samochodów (oraz informacji o samochodach). Aplikacja desktopowa na .NET Framework do pracy w sieci lokalnej.',
+        'sec.tech': 'Technologie',
+        'sec.roadmap': 'Plan rozwoju'
+      },
+      en: {
+        'page.title': 'WMS Project — Project',
+        'nav.back': '← Back',
+        'proj.name': 'WMS Project',
+        'sec.purpose': 'Purpose',
+        'purpose.text': 'A warehouse management system (WMS) created in a short time (~1 week) with WinForms. Covers basic CRUD operations to keep inventory records of cars (and their details). Desktop app on .NET Framework for local network use.',
+        'sec.tech': 'Technologies',
+        'sec.roadmap': 'Roadmap'
+      }
+    });
+    SiteI18n.init();
+  </script>
+  <script>
+    SiteI18n.apply({
+      pl: {
+        'badge.tech.csharp': 'C#',
+        'badge.tech.winforms': 'WinForms',
+        'badge.tech.dotnetfw': '.NET Framework',
+        'badge.tech.mssql': 'MS SQL Server',
+        'road.wms.wpf': 'Przepisanie na WPF'
+      },
+      en: {
+        'badge.tech.csharp': 'C#',
+        'badge.tech.winforms': 'WinForms',
+        'badge.tech.dotnetfw': '.NET Framework',
+        'badge.tech.mssql': 'MS SQL Server',
+        'road.wms.wpf': 'Rewrite to WPF'
+      }
+    });
+    SiteI18n.init();
+  </script>
+  </html>

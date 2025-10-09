@@ -4,13 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CloudFlow HR — Projekt</title>
+      <title data-i18n="page.title">CloudFlow HR — Projekt</title>
     <link rel="stylesheet" href="../landing.css" />
+      <script src="../i18n.js"></script>
   </head>
   <body>
     <div class="container">
       <header>
   <a href="../../index.html">← Powrót</a>
+    <a href="../../index.html" data-i18n="nav.back">← Powrót</a>
         <span>CloudFlow HR</span>
+          <span data-i18n="proj.name">CloudFlow HR</span>
+          <select id="langSwitcher" class="lang-switch" style="margin-left:auto">
+            <option value="pl">Polski</option>
+            <option value="en">English</option>
+          </select>
       </header>
 
   <h1><img class="proj-icon" src="../../icons/CloudFlowIcon.png" alt=""/>CloudFlow HR</h1>
@@ -59,32 +67,33 @@
 
       <!-- Opis pod galerią -->
       <section class="panel">
-        <h2 class="accent">Cel aplikacji</h2>
-        <p>
-          Aplikacja kadrowo‑płacowa działająca w pełni w chmurze, łącząca wygodę Blazor WebAssembly z wydajnością SSR (Blazor Server)
-          dla płynnego UX i krótkiego czasu odpowiedzi. Umożliwia obsługę pełnego cyklu HR: kartoteki pracowników, absencje, delegacje oraz w przyszłości wynagrodzenia pracowników.
-        </p>
+          <h2 class="accent" data-i18n="sec.purpose">Cel aplikacji</h2>
+          <p data-i18n="purpose.text">
+            Aplikacja kadrowo‑płacowa działająca w pełni w chmurze, łącząca wygodę Blazor WebAssembly z wydajnością SSR (Blazor Server)
+            dla płynnego UX i krótkiego czasu odpowiedzi. Umożliwia obsługę pełnego cyklu HR: kartoteki pracowników, urlopy, rekrutacje,
+            analitykę KPI oraz integracje z zewnętrznymi systemami.
+          </p>
       </section>
 
       <!-- Dół: 2 kolumny (Technologie | Plan rozwoju) -->
       <section class="columns">
         <div class="panel">
-          <h2 class="accent">Technologie</h2>
+            <h2 class="accent" data-i18n="sec.tech">Technologie</h2>
           <div class="skills-grid">
-            <span class="skill-badge">C#</span>
-            <span class="skill-badge">ASP.NET Core</span>
-            <span class="skill-badge">Blazor WASM</span>
-            <span class="skill-badge">Blazor Server</span>
-            <span class="skill-badge">Entity Framework</span>
-            <span class="skill-badge">SQL</span>
+            <span class="skill-badge" data-i18n="badge.tech.csharp">C#</span>
+            <span class="skill-badge" data-i18n="badge.tech.aspnetcore">ASP.NET Core</span>
+            <span class="skill-badge" data-i18n="badge.tech.blazorwasm">Blazor WASM</span>
+            <span class="skill-badge" data-i18n="badge.tech.blazorserver">Blazor Server</span>
+            <span class="skill-badge" data-i18n="badge.tech.ef">Entity Framework</span>
+            <span class="skill-badge" data-i18n="badge.tech.sql">SQL</span>
           </div>
         </div>
         <div class="panel">
-          <h2 class="accent">Plan rozwoju</h2>
+            <h2 class="accent" data-i18n="sec.roadmap">Plan rozwoju</h2>
           <ul class="roadmap">
-            <li class="done">Import danych</li>
-            <li class="wip">Analityka KPI</li>
-            <li>Automatyzacja procesów</li>
+            <li class="done" data-i18n="road.cf.import">Import danych</li>
+            <li class="wip" data-i18n="road.cf.kpi">Analityka KPI</li>
+            <li data-i18n="road.cf.automation">Automatyzacja procesów</li>
           </ul>
         </div>
       </section>
@@ -92,4 +101,45 @@
   </body>
   <script src="../carousel.js"></script>
   <script src="../gallery.js"></script>
+    <script>
+      SiteI18n.apply({
+        pl: {
+          'page.title': 'CloudFlow HR — Projekt',
+          'nav.back': '← Powrót',
+          'proj.name': 'CloudFlow HR',
+          'sec.purpose': 'Cel aplikacji',
+          'purpose.text': 'Aplikacja kadrowo‑płacowa działająca w pełni w chmurze, łącząca wygodę Blazor WebAssembly z wydajnością SSR (Blazor Server) dla płynnego UX i krótkiego czasu odpowiedzi. Umożliwia obsługę pełnego cyklu HR: kartoteki pracowników, urlopy, rekrutacje, analitykę KPI oraz integracje z zewnętrznymi systemami.',
+          'sec.tech': 'Technologie',
+          'sec.roadmap': 'Plan rozwoju',
+          'badge.tech.csharp': 'C#',
+          'badge.tech.aspnetcore': 'ASP.NET Core',
+          'badge.tech.blazorwasm': 'Blazor WASM',
+          'badge.tech.blazorserver': 'Blazor Server',
+          'badge.tech.ef': 'Entity Framework',
+          'badge.tech.sql': 'SQL',
+          'road.cf.import': 'Import danych',
+          'road.cf.kpi': 'Analityka KPI',
+          'road.cf.automation': 'Automatyzacja procesów'
+        },
+        en: {
+          'page.title': 'CloudFlow HR — Project',
+          'nav.back': '← Back',
+          'proj.name': 'CloudFlow HR',
+          'sec.purpose': 'Purpose',
+          'purpose.text': 'A cloud-based HR/payroll application combining the convenience of Blazor WebAssembly with the performance of SSR (Blazor Server) for smooth UX and fast response times. Covers the full HR cycle: employee records, leave, recruitment, KPI analytics, and integrations with external systems.',
+          'sec.tech': 'Technologies',
+          'sec.roadmap': 'Roadmap',
+          'badge.tech.csharp': 'C#',
+          'badge.tech.aspnetcore': 'ASP.NET Core',
+          'badge.tech.blazorwasm': 'Blazor WASM',
+          'badge.tech.blazorserver': 'Blazor Server',
+          'badge.tech.ef': 'Entity Framework',
+          'badge.tech.sql': 'SQL',
+          'road.cf.import': 'Data import',
+          'road.cf.kpi': 'KPI analytics',
+          'road.cf.automation': 'Process automation'
+        }
+      });
+      SiteI18n.init();
+    </script>
   </html>

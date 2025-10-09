@@ -76,6 +76,8 @@
       gal.addEventListener('click', (e)=>{
         const target = e.target.closest('img');
         if(!target) return;
+        // Ignore clicks coming from the thumbnails strip
+        if (e.target.closest('.carousel__thumbs')) return;
         // ignoruj klik w miniatury, jeśli nie chcemy powiększać z miniatur — tutaj pozwalamy też z miniatur
         // Zbierz listę dużych slajdów (bez miniaturek)
         let imgs = gal.querySelectorAll('.carousel__track img');
