@@ -21,7 +21,7 @@
         <a class="icon-link" href="https://www.linkedin.com/in/p-przybyszewski2709" target="_blank" rel="noopener" title="LinkedIn">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 7 1.64a2.44 2.44 0 0 1-.06 4.86ZM3.65 8.25h3.98v12.1H3.65V8.25Zm6.2 0h3.82v1.65h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.65 4.77 6.09v6.56h-3.98v-5.81c0-1.39-.02-3.19-1.94-3.19-1.94 0-2.24 1.52-2.24 3.09v5.91H9.85V8.25Z"/></svg>
         </a>
-        <select id="langSwitcher" title="Język / Language" style="margin-left: 8px; padding: 6px 8px; border-radius: 8px; background: var(--bg); color: var(--text); border: 1px solid rgba(255,255,255,0.06)">
+        <select id="langSwitcher" title="Język / Language" class="lang-switch" style="margin-left: 8px;">
           <option value="pl">Polski</option>
           <option value="en">English</option>
         </select>
@@ -60,39 +60,50 @@
 
           <h3 class="group-title" data-i18n="skills.group.tech">Technologie</h3>
           <div class="skills-grid">
-            <span class="skill-badge">C#</span>
-            <span class="skill-badge">.NET MAUI</span>
-            <span class="skill-badge">ASP.NET Core</span>
-            <span class="skill-badge">Blazor</span>
-            <span class="skill-badge">SQL</span>
-            <span class="skill-badge">Entity Framework</span>
-            <span class="skill-badge">LINQ</span>
-            <span class="skill-badge">HTML</span>
-            <span class="skill-badge">REST API</span>
-            <span class="skill-badge">WinForms</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">JavaScript</span>
-            <span class="skill-badge">Git</span>
+            <span class="skill-badge" data-i18n="badge.tech.csharp">C#</span>
+            <span class="skill-badge" data-i18n="badge.tech.dotnetmaui">.NET MAUI</span>
+            <span class="skill-badge" data-i18n="badge.tech.aspnetcore">ASP.NET Core</span>
+            <span class="skill-badge" data-i18n="badge.tech.blazor">Blazor</span>
+            <span class="skill-badge" data-i18n="badge.tech.sql">SQL</span>
+            <span class="skill-badge" data-i18n="badge.tech.ef">Entity Framework</span>
+            <span class="skill-badge" data-i18n="badge.tech.linq">LINQ</span>
+            <span class="skill-badge" data-i18n="badge.tech.html">HTML</span>
+            <span class="skill-badge" data-i18n="badge.tech.restapi">REST API</span>
+            <span class="skill-badge" data-i18n="badge.tech.winforms">WinForms</span>
+            <span class="skill-badge" data-i18n="badge.tech.python">Python</span>
+            <span class="skill-badge" data-i18n="badge.tech.javascript">JavaScript</span>
+            <span class="skill-badge" data-i18n="badge.tech.git">Git</span>
           </div>
 
           <h3 class="group-title" data-i18n="skills.group.tools">Narzędzia</h3>
           <div class="skills-grid">
-            <span class="skill-badge">Azure DevOps</span>
-            <span class="skill-badge">Microsoft Office</span>
-            <span class="skill-badge">Issue Tracking</span>
-            <span class="skill-badge">Report Generation</span>
+            <span class="skill-badge" data-i18n="badge.tools.azuredevops">Azure DevOps</span>
+            <span class="skill-badge" data-i18n="badge.tools.visualstudio">Visual Studio</span>
+            <span class="skill-badge" data-i18n="badge.tools.githubdesktop">GitHub Desktop</span>
+            <span class="skill-badge" data-i18n="badge.tools.ssms">SSMS</span>
+            <span class="skill-badge" data-i18n="badge.tools.pgadmin">pgAdmin (PostgreSQL)</span>
+            <span class="skill-badge" data-i18n="badge.tools.postman">Postman</span>
+            <span class="skill-badge" data-i18n="badge.tools.fiddler">Fiddler</span>
+            <span class="skill-badge" data-i18n="badge.tools.cicd">CI/CD</span>
+            <span class="skill-badge" data-i18n="badge.tools.office">Microsoft Office</span>
+            <span class="skill-badge" data-i18n="badge.tools.issuetracking">Śledzenie Work Itemów (PBI/Bug)</span>
+            <span class="skill-badge" data-i18n="badge.tools.reportgen">Generowanie raportów</span>
           </div>
 
           <h3 class="group-title" data-i18n="skills.group.comp">Kompetencje</h3>
           <div class="skills-grid">
-            <span class="skill-badge">Technical Documentation</span>
-            <span class="skill-badge">Software Testing</span>
-            <span class="skill-badge">Problem‑Solving</span>
-            <span class="skill-badge">English Language (Advanced)</span>
-            <span class="skill-badge">High Communication Skills</span>
-            <span class="skill-badge">Build Interdepartmental Connections</span>
-            <span class="skill-badge">Self‑Management</span>
-            <span class="skill-badge">Teamwork</span>
+            <span class="skill-badge" data-i18n="badge.comp.techdoc">Dokumentacja techniczna</span>
+            <span class="skill-badge" data-i18n="badge.comp.testing">Testowanie oprogramowania</span>
+            <span class="skill-badge" data-i18n="badge.comp.unit">Testy jednostkowe</span>
+            <span class="skill-badge" data-i18n="badge.comp.e2e">Testy end‑to‑end (E2E)</span>
+            <span class="skill-badge" data-i18n="badge.comp.performance">Testy wydajnościowe</span>
+            <span class="skill-badge" data-i18n="badge.comp.archplan">Planowanie architektury</span>
+            <span class="skill-badge" data-i18n="badge.comp.problem">Rozwiązywanie problemów</span>
+            <span class="skill-badge" data-i18n="badge.comp.english">Język angielski (zaawansowany)</span>
+            <span class="skill-badge" data-i18n="badge.comp.communication">Wysokie umiejętności komunikacyjne</span>
+            <span class="skill-badge" data-i18n="badge.comp.connections">Budowanie relacji międzydziałowych</span>
+            <span class="skill-badge" data-i18n="badge.comp.selfmgmt">Samodzielność</span>
+            <span class="skill-badge" data-i18n="badge.comp.teamwork">Praca zespołowa</span>
           </div>
         </section>
 
@@ -108,7 +119,7 @@
         </aside>
       </main>
 
-      <footer>© <span id="year"></span> phoneuooyd</footer>
+      <footer style="text-align: center;">© <span id="year"></span> Przemysław Przybyszewski</footer>
     </div>
 
     <script>
@@ -137,6 +148,48 @@
           'projects.foodbook': 'Foodbook App',
           'projects.wms': 'WMS Project',
           'projects.tictactoe': 'TicTacToe game – mój pierwszy projekt',
+          
+          /* Badge: Technologies */
+          'badge.tech.csharp': 'C#',
+          'badge.tech.dotnetmaui': '.NET MAUI',
+          'badge.tech.aspnetcore': 'ASP.NET Core',
+          'badge.tech.blazor': 'Blazor',
+          'badge.tech.sql': 'SQL',
+          'badge.tech.ef': 'Entity Framework',
+          'badge.tech.linq': 'LINQ',
+          'badge.tech.html': 'HTML',
+          'badge.tech.restapi': 'REST API',
+          'badge.tech.winforms': 'WinForms',
+          'badge.tech.python': 'Python',
+          'badge.tech.javascript': 'JavaScript',
+          'badge.tech.git': 'Git',
+
+          /* Badge: Tools */
+          'badge.tools.azuredevops': 'Azure DevOps',
+          'badge.tools.visualstudio': 'Visual Studio',
+          'badge.tools.githubdesktop': 'GitHub Desktop',
+          'badge.tools.ssms': 'SSMS',
+          'badge.tools.pgadmin': 'pgAdmin (PostgreSQL)',
+          'badge.tools.postman': 'Postman',
+          'badge.tools.fiddler': 'Fiddler',
+          'badge.tools.cicd': 'CI/CD',
+          'badge.tools.office': 'Microsoft Office',
+          'badge.tools.issuetracking': 'Śledzenie Work Itemów (PBI/Bug)',
+          'badge.tools.reportgen': 'Generowanie raportów',
+
+          /* Badge: Competencies */
+          'badge.comp.techdoc': 'Dokumentacja techniczna',
+          'badge.comp.testing': 'Testowanie oprogramowania',
+          'badge.comp.unit': 'Testy jednostkowe',
+          'badge.comp.e2e': 'Testy end‑to‑end (E2E)',
+          'badge.comp.performance': 'Testy wydajnościowe',
+          'badge.comp.archplan': 'Planowanie architektury',
+          'badge.comp.problem': 'Rozwiązywanie problemów',
+          'badge.comp.english': 'Język angielski (zaawansowany)',
+          'badge.comp.communication': 'Wysokie umiejętności komunikacyjne',
+          'badge.comp.connections': 'Budowanie relacji międzydziałowych',
+          'badge.comp.selfmgmt': 'Samodzielność',
+          'badge.comp.teamwork': 'Praca zespołowa',
         },
         en: {
           'page.title': 'Portfolio – Welcome',
@@ -161,6 +214,48 @@
           'projects.foodbook': 'Foodbook App',
           'projects.wms': 'WMS Project',
           'projects.tictactoe': 'TicTacToe game – my first project',
+
+          /* Badge: Technologies */
+          'badge.tech.csharp': 'C#',
+          'badge.tech.dotnetmaui': '.NET MAUI',
+          'badge.tech.aspnetcore': 'ASP.NET Core',
+          'badge.tech.blazor': 'Blazor',
+          'badge.tech.sql': 'SQL',
+          'badge.tech.ef': 'Entity Framework',
+          'badge.tech.linq': 'LINQ',
+          'badge.tech.html': 'HTML',
+          'badge.tech.restapi': 'REST API',
+          'badge.tech.winforms': 'WinForms',
+          'badge.tech.python': 'Python',
+          'badge.tech.javascript': 'JavaScript',
+          'badge.tech.git': 'Git',
+
+          /* Badge: Tools */
+          'badge.tools.azuredevops': 'Azure DevOps',
+          'badge.tools.visualstudio': 'Visual Studio',
+          'badge.tools.githubdesktop': 'GitHub Desktop',
+          'badge.tools.ssms': 'SSMS',
+          'badge.tools.pgadmin': 'pgAdmin (PostgreSQL)',
+          'badge.tools.postman': 'Postman',
+          'badge.tools.fiddler': 'Fiddler',
+          'badge.tools.cicd': 'CI/CD',
+          'badge.tools.office': 'Microsoft Office',
+          'badge.tools.issuetracking': 'Azure Boards Work Items (PBI/Bug) tracking',
+          'badge.tools.reportgen': 'Report Generation',
+
+          /* Badge: Competencies */
+          'badge.comp.techdoc': 'Technical Documentation',
+          'badge.comp.testing': 'Software Testing',
+          'badge.comp.unit': 'Unit Testing',
+          'badge.comp.e2e': 'End‑to‑End (E2E) Testing',
+          'badge.comp.performance': 'Performance Testing',
+          'badge.comp.archplan': 'Architecture Planning',
+          'badge.comp.problem': 'Problem‑Solving',
+          'badge.comp.english': 'English Language (Advanced)',
+          'badge.comp.communication': 'High Communication Skills',
+          'badge.comp.connections': 'Build Interdepartmental Connections',
+          'badge.comp.selfmgmt': 'Self‑Management',
+          'badge.comp.teamwork': 'Teamwork',
         }
       };
 

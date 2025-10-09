@@ -60,6 +60,36 @@ body {
 .icon-btn:hover, .icon-link:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
 .icon { width: 20px; height: 20px; display: block; fill: currentColor; }
 
+/* Language picker styled like icon buttons */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 34px 0 12px; /* extra right space for arrow */
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08); /* swapped: use former hover/focus-like background by default */
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  font: inherit;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23eaeef7'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+.lang-switch:hover { transform: translateY(-2px); background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.14); }
+  /* Focus: lighter gray background, darker gray border (no movement/glow) */
+  .lang-switch:focus,
+  .lang-switch:focus-visible {
+    outline: none;
+    background: rgba(255,255,255,0.10); /* lighter gray instead of white */
+    border-color: rgba(255,255,255,0.16); /* darker gray border instead of white */
+  }
+#langSwitcher option { background: var(--bg); color: var(--text); }
+
 .grid {
   margin-top: 90px;
   display: grid;
