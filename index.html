@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Strona powitalna</title>
+  <title data-i18n="page.title">Portfolio – Strona powitalna</title>
   <link rel="stylesheet" href="landing.css" />
   <!-- Fallback for direct file viewing (without Vite dev server) -->
   <link rel="stylesheet" href="public/landing.css" />
+  <script src="public/i18n.js"></script>
   </head>
   <body>
     <div class="wrap">
@@ -123,8 +124,8 @@
     </div>
 
     <script>
-      // --- i18n dictionary ---
-      const I18N = {
+      // --- i18n dictionary (consumed by SiteI18n from public/i18n.js) ---
+      const I18N_DICT = {
         pl: {
           'page.title': 'Portfolio – Strona powitalna',
           'top.actionsLabel': 'Szybkie akcje',
@@ -258,53 +259,12 @@
           'badge.comp.teamwork': 'Teamwork',
         }
       };
-
-      const LANG_KEY = 'site.lang';
-      const $ = (sel, root=document) => root.querySelector(sel);
-      const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-
-      function t(key, lang){
-        const L = lang || currentLang();
-        return (I18N[L] && I18N[L][key]) || (I18N.pl && I18N.pl[key]) || key;
-      }
-
-      function currentLang(){
-        return localStorage.getItem(LANG_KEY) || 'pl';
-      }
-
-      function setLang(lang){
-        localStorage.setItem(LANG_KEY, lang);
-        document.documentElement.setAttribute('lang', lang);
-        applyI18n(lang);
-      }
-
-      function applyI18n(lang){
-        // Page title
-        document.title = t('page.title', lang);
-        // Label(s)
-        const ta = $('.top-actions');
-        ta && ta.setAttribute('aria-label', t('top.actionsLabel', lang));
-        // Elements with data-i18n (text content)
-        $$('[data-i18n]').forEach(el => {
-          el.textContent = t(el.getAttribute('data-i18n'), lang);
-        });
-        // Copy button tooltip
-        const btn = $('#copyEmail');
-        btn && btn.setAttribute('title', t('copy.tooltip', lang));
-      }
-
       // Init year
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Init language from storage or default
-      const initialLang = currentLang();
-      const langSel = document.getElementById('langSwitcher');
-      if (langSel) {
-        langSel.value = initialLang;
-        langSel.addEventListener('change', (e) => setLang(e.target.value));
-      }
-      document.documentElement.setAttribute('lang', initialLang);
-      applyI18n(initialLang);
+      // Apply dictionary and init site i18n (global across pages via localStorage)
+      SiteI18n.apply(I18N_DICT);
+      SiteI18n.init();
 
       // Copy e-mail logic with i18n feedback
       const EMAIL = 'p.przybyszewski2709@gmail.com';
@@ -323,10 +283,11 @@
           try { document.execCommand('copy'); ok = true; } catch (_) {}
           ta.remove();
         }
-        const lang = currentLang();
-        btn.setAttribute('title', ok ? t('copy.success', lang) : t('copy.fail', lang));
+        const lang = SiteI18n.currentLang();
+        const t = (k)=>SiteI18n.t(k, lang);
+        btn.setAttribute('title', ok ? t('copy.success') : t('copy.fail'));
         btn.style.background = ok ? 'rgba(135, 231, 158, 0.25)' : 'rgba(231, 135, 135, 0.25)';
-        setTimeout(() => { btn.style.background = ''; btn.setAttribute('title', t('copy.tooltip', lang)); }, 1400);
+        setTimeout(() => { btn.style.background = ''; btn.setAttribute('title', t('copy.tooltip')); }, 1400);
       });
     </script>
   </body>
