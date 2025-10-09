@@ -189,7 +189,7 @@ footer { color: #7d8797; font-size: 12px; margin-top: 32px; text-align: right; o
 .container{ max-width:900px; margin:0 auto; padding:32px 20px; }
 a{ color:#e9d758; text-decoration:none; }
 header{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
-h1 .proj-icon{ width:32px; height:32px; vertical-align:-6px; margin-right:8px; border-radius:6px; }
+h1 .proj-icon{ display:inline-block; width:48px; height:48px; vertical-align:middle; margin-right:10px; border-radius:6px; }
 h1{ margin:24px 0 8px; font-weight:600; }
 p{ color:#9aa3b2; }
 .card{ background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px; }
