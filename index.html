@@ -4,111 +4,282 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio – Strona powitalna</title>
+  <title data-i18n="page.title">Portfolio – Strona powitalna</title>
   <link rel="stylesheet" href="landing.css" />
   <!-- Fallback for direct file viewing (without Vite dev server) -->
   <link rel="stylesheet" href="public/landing.css" />
+  <script src="public/i18n.js"></script>
   </head>
   <body>
     <div class="wrap">
-      <div class="top-actions" aria-label="Szybkie akcje">
-        <button id="copyEmail" class="icon-btn" title="Kopiuj e‑mail do schowka">
+      <div class="top-actions" data-i18n-attr-aria-label="top.actionsLabel" aria-label="Szybkie akcje">
+        <button id="copyEmail" class="icon-btn" data-i18n-attr-title="copy.tooltip" title="Kopiuj e‑mail do schowka">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
         </button>
-        <a class="icon-link" href="https://github.com/phoneuooyd" target="_blank" rel="noopener" title="GitHub">
+        <a class="icon-link" href="https://github.com/phoneuooyd" target="_blank" rel="noopener" data-i18n-attr-title="social.github" title="GitHub">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.21.68-.47v-1.7c-2.78.6-3.37-1.19-3.37-1.19-.46-1.16-1.12-1.47-1.12-1.47-.92-.63.07-.62.07-.62 1.02.07 1.56 1.05 1.56 1.05.9 1.56 2.36 1.11 2.94.85.09-.66.35-1.11.64-1.37-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.28.1-2.66 0 0 .84-.27 2.75 1.02A9.5 9.5 0 0 1 12 6.8c.85 0 1.7.11 2.49.33 1.9-1.29 2.74-1.02 2.74-1.02.56 1.38.21 2.41.11 2.66.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .26.18.57.69.47A10 10 0 0 0 12 2Z"/></svg>
         </a>
-        <a class="icon-link" href="https://www.linkedin.com/in/p-przybyszewski2709" target="_blank" rel="noopener" title="LinkedIn">
+        <a class="icon-link" href="https://www.linkedin.com/in/p-przybyszewski2709" target="_blank" rel="noopener" data-i18n-attr-title="social.linkedin" title="LinkedIn">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 6.5A2.44 2.44 0 1 1 7 1.64a2.44 2.44 0 0 1-.06 4.86ZM3.65 8.25h3.98v12.1H3.65V8.25Zm6.2 0h3.82v1.65h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.77 2.65 4.77 6.09v6.56h-3.98v-5.81c0-1.39-.02-3.19-1.94-3.19-1.94 0-2.24 1.52-2.24 3.09v5.91H9.85V8.25Z"/></svg>
         </a>
+        <select id="langSwitcher" class="lang-switch" style="margin-left: 8px;" data-i18n-attr-title="lang.title" title="Język / Language">
+          <option value="pl">Polski</option>
+          <option value="en">English</option>
+        </select>
       </div>
 
       <main class="grid">
         <section class="welcome" aria-labelledby="welcome-title">
-          <h1 id="welcome-title" class="title">Witaj<span style="color: var(--muted)">.</span></h1>
-          <p class="lead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
+          <h1 id="welcome-title" class="title"><span data-i18n="welcome.title">Witaj</span><span style="color: var(--muted)">.</span></h1>
+          <p class="lead" data-i18n="welcome.lead">
+            Nazywam się Przemysław Przybyszewski i tworzę projekty, które starają się rozwiązywać problemy rzeczywiste oraz rozwijać moje umiejętności. 
+            Na co dzień pracuję jako inżynier testów, a po godzinach rozwijam projekty w ekosystemie .NET, szczególnie w Blazorze i .NET MAUI. 
+            Lubię projektować aplikacje, tworzyć koncepcję, architekturę, design i brać udział w całym cyklu życia oprogramowania.
           </p>
         </section>
 
         <!-- Sekcja O mnie -->
         <section class="panel about" aria-labelledby="about-title">
-          <h2 id="about-title" class="accent">O mnie</h2>
-          <p style="margin: 0 0 8px; color: var(--muted);">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur iaculis, neque vitae blandit euismod, justo lacus
-            efficitur nibh, vitae accumsan magna lorem nec lorem. Suspendisse potenti. Integer id posuere arcu. Nullam mattis,
-            metus sed finibus mattis, orci mauris cursus sem, in commodo odio sapien at turpis.
+          <h2 id="about-title" class="accent" data-i18n="about.title">O mnie</h2>
+          <p style="margin: 0 0 8px; color: var(--muted);" data-i18n="about.p1">
+            Jestem absolwentem Uniwersytetu WSB Merito we Wrocławiu oraz zawodowym inżynierem testów, który konsekwentnie rozwija się w kierunku programisty .NET.
           </p>
-          <p style="margin: 0; color: var(--muted);">
-            Phasellus ut velit non ex gravida egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-            cubilia curae; Cras vitae varius sem, id rutrum odio. Donec pharetra, augue non volutpat dictum, sapien nisl
-            porttitor ex, vel auctor turpis lectus sed nibh.
+          <p style="margin: 0 0 8px; color: var(--muted);" data-i18n="about.p2">
+            Na co dzień łączę wiedzę testerską z umiejętnościami programistycznymi, dzięki czemu potrafię patrzeć na projekt zarówno z perspektywy jakości, jak i architektury kodu.
+          </p>
+          <p style="margin: 0 0 8px; color: var(--muted);" data-i18n="about.p3">
+            Pracuję głównie w technologiach C#, Blazor, .NET MAUI i Entity Framework Core.
+          </p>
+          <p style="margin: 0; color: var(--muted);" data-i18n="about.p4">
+            Po godzinach rozwijam własne projekty — w tym aplikację kadrowo-płacową, mobilną aplikację do wysyłek faktur do KSeF oraz mobilną aplikację do zarządzania dietą oraz listami zakupów.
           </p>
         </section>
 
         <!-- Sekcja Umiejętności -->
         <section class="panel skills" aria-labelledby="skills-title">
-          <h2 id="skills-title" class="accent">Umiejętności</h2>
+          <h2 id="skills-title" class="accent" data-i18n="skills.title">Umiejętności</h2>
 
-          <h3 class="group-title">Technologie</h3>
+          <h3 class="group-title" data-i18n="skills.group.tech">Technologie</h3>
           <div class="skills-grid">
-            <span class="skill-badge">C#</span>
-            <span class="skill-badge">.NET MAUI</span>
-            <span class="skill-badge">ASP.NET Core</span>
-            <span class="skill-badge">Blazor</span>
-            <span class="skill-badge">SQL</span>
-            <span class="skill-badge">Entity Framework</span>
-            <span class="skill-badge">LINQ</span>
-            <span class="skill-badge">HTML</span>
-            <span class="skill-badge">Python</span>
+            <span class="skill-badge" data-i18n="badge.tech.csharp">C#</span>
+            <span class="skill-badge" data-i18n="badge.tech.dotnetmaui">.NET MAUI</span>
+            <span class="skill-badge" data-i18n="badge.tech.aspnetcore">ASP.NET Core</span>
+            <span class="skill-badge" data-i18n="badge.tech.blazor">Blazor</span>
+            <span class="skill-badge" data-i18n="badge.tech.sql">SQL</span>
+            <span class="skill-badge" data-i18n="badge.tech.ef">Entity Framework</span>
+            <span class="skill-badge" data-i18n="badge.tech.linq">LINQ</span>
+            <span class="skill-badge" data-i18n="badge.tech.html">HTML</span>
+            <span class="skill-badge" data-i18n="badge.tech.restapi">REST API</span>
+            <span class="skill-badge" data-i18n="badge.tech.winforms">WinForms</span>
+            <span class="skill-badge" data-i18n="badge.tech.python">Python</span>
+            <span class="skill-badge" data-i18n="badge.tech.javascript">JavaScript</span>
+            <span class="skill-badge" data-i18n="badge.tech.git">Git</span>
           </div>
 
-          <h3 class="group-title">Narzędzia</h3>
+          <h3 class="group-title" data-i18n="skills.group.tools">Narzędzia</h3>
           <div class="skills-grid">
-            <span class="skill-badge">Azure DevOps</span>
-            <span class="skill-badge">Microsoft Office</span>
-            <span class="skill-badge">Issue Tracking</span>
-            <span class="skill-badge">Report Generation</span>
+            <span class="skill-badge" data-i18n="badge.tools.azuredevops">Azure DevOps</span>
+            <span class="skill-badge" data-i18n="badge.tools.visualstudio">Visual Studio</span>
+            <span class="skill-badge" data-i18n="badge.tools.githubdesktop">GitHub Desktop</span>
+            <span class="skill-badge" data-i18n="badge.tools.ssms">SSMS</span>
+            <span class="skill-badge" data-i18n="badge.tools.pgadmin">pgAdmin (PostgreSQL)</span>
+            <span class="skill-badge" data-i18n="badge.tools.postman">Postman</span>
+            <span class="skill-badge" data-i18n="badge.tools.fiddler">Fiddler</span>
+            <span class="skill-badge" data-i18n="badge.tools.cicd">CI/CD</span>
+            <span class="skill-badge" data-i18n="badge.tools.office">Microsoft Office</span>
+            <span class="skill-badge" data-i18n="badge.tools.issuetracking">Śledzenie Work Itemów (PBI/Bug)</span>
+            <span class="skill-badge" data-i18n="badge.tools.reportgen">Generowanie raportów</span>
           </div>
 
-          <h3 class="group-title">Kompetencje</h3>
+          <h3 class="group-title" data-i18n="skills.group.comp">Kompetencje</h3>
           <div class="skills-grid">
-            <span class="skill-badge">Technical Documentation</span>
-            <span class="skill-badge">Software Testing</span>
-            <span class="skill-badge">Problem‑Solving</span>
-            <span class="skill-badge">Customer Support</span>
-            <span class="skill-badge">English Language (Advanced)</span>
-            <span class="skill-badge">High Communication Skills</span>
-            <span class="skill-badge">Build Interdepartmental Connections</span>
-            <span class="skill-badge">Self‑Management</span>
-            <span class="skill-badge">Teamwork</span>
+            <span class="skill-badge" data-i18n="badge.comp.techdoc">Dokumentacja techniczna</span>
+            <span class="skill-badge" data-i18n="badge.comp.testing">Testowanie oprogramowania</span>
+            <span class="skill-badge" data-i18n="badge.comp.unit">Testy jednostkowe</span>
+            <span class="skill-badge" data-i18n="badge.comp.e2e">Testy end‑to‑end (E2E)</span>
+            <span class="skill-badge" data-i18n="badge.comp.performance">Testy wydajnościowe</span>
+            <span class="skill-badge" data-i18n="badge.comp.archplan">Planowanie architektury</span>
+            <span class="skill-badge" data-i18n="badge.comp.problem">Rozwiązywanie problemów</span>
+            <span class="skill-badge" data-i18n="badge.comp.english">Język angielski (zaawansowany)</span>
+            <span class="skill-badge" data-i18n="badge.comp.communication">Wysokie umiejętności komunikacyjne</span>
+            <span class="skill-badge" data-i18n="badge.comp.connections">Budowanie relacji międzydziałowych</span>
+            <span class="skill-badge" data-i18n="badge.comp.selfmgmt">Samodzielność</span>
+            <span class="skill-badge" data-i18n="badge.comp.teamwork">Praca zespołowa</span>
           </div>
         </section>
 
         <aside class="projects" aria-labelledby="projects-title">
-          <h2 id="projects-title" class="accent">Projekty</h2>
+          <h2 id="projects-title" class="accent" data-i18n="projects.title">Projekty</h2>
           <ul class="proj-list">
-            <li><a href="public/projects/ksef-mobile-app.html"><span class="underline">Ksef Mobile App</span></a></li>
-            <li><a href="public/projects/cloudflow-hr.html"><span class="underline">CloudFlow HR</span></a></li>
-            <li><a href="public/projects/foodbook-app.html"><span class="underline">Foodbook App</span></a></li>
-            <li><a href="public/projects/wms-project.html"><span class="underline">WMS Project</span></a></li>
-            <li><a href="public/projects/tictactoe-game.html"><span class="underline">TicTacToe game – mój pierwszy projekt</span></a></li>
+            <li><a href="public/projects/ksef-mobile-app.html"><img class="proj-icon" src="icons/KsefProjectIcon.png" alt=""/><span class="underline" data-i18n="projects.ksef">Ksef Mobile App</span></a></li>
+            <li><a href="public/projects/cloudflow-hr.html"><img class="proj-icon" src="icons/CloudFlowIcon.png" alt=""/><span class="underline" data-i18n="projects.cloudflow">CloudFlow HR</span></a></li>
+            <li><a href="public/projects/foodbook-app.html"><img class="proj-icon" src="icons/FoodbookAppIcon.png" alt=""/><span class="underline" data-i18n="projects.foodbook">Foodbook App</span></a></li>
+            <li><a href="public/projects/wms-project.html"><img class="proj-icon" src="icons/WMSProjektIcon.png" alt=""/><span class="underline" data-i18n="projects.wms">WMS Project</span></a></li>
+            <li><a href="public/projects/tictactoe-game.html"><img class="proj-icon" src="icons/TicTacToeIcon.png" alt=""/><span class="underline" data-i18n="projects.tictactoe">TicTacToe game – mój pierwszy projekt</span></a></li>
           </ul>
         </aside>
       </main>
 
-      <footer>© <span id="year"></span> phoneuooyd</footer>
+      <footer style="text-align: center;">© <span id="year"></span> Przemysław Przybyszewski</footer>
     </div>
 
-    <!-- Oryginalny montaż aplikacji React/Vite (wyłączony na potrzeby landing page) -->
-    <!-- <div id="root"></div> -->
-    <!-- <script type="module" src="/src/main.jsx"></script> -->
-
     <script>
+      // --- i18n dictionary (consumed by SiteI18n from public/i18n.js) ---
+      const I18N_DICT = {
+        pl: {
+          'page.title': 'Portfolio – Strona powitalna',
+          'top.actionsLabel': 'Szybkie akcje',
+          'lang.title': 'Język / Language',
+          'copy.tooltip': 'Kopiuj e‑mail do schowka',
+          'copy.success': 'Skopiowano do schowka',
+          'copy.fail': 'Nie udało się skopiować',
+          'social.github': 'GitHub',
+          'social.linkedin': 'LinkedIn',
+          'welcome.title': 'Witaj',
+          'welcome.lead': 'Nazywam się Przemysław Przybyszewski i tworzę projekty, które starają się rozwiązywać problemy rzeczywiste oraz rozwijać moje umiejętności. Na co dzień pracuję jako inżynier testów, a po godzinach rozwijam projekty w ekosystemie .NET, szczególnie w Blazorze i .NET MAUI. Lubię projektować aplikacje, tworzyć koncepcję, architekturę, design i brać udział w całym cyklu życia oprogramowania.',
+          'about.title': 'O mnie',
+          'about.p1': 'Jestem absolwentem Uniwersytetu WSB Merito we Wrocławiu oraz zawodowym inżynierem testów, który konsekwentnie rozwija się w kierunku programisty .NET.',
+          'about.p2': 'Na co dzień łączę wiedzę testerską z umiejętnościami programistycznymi, dzięki czemu potrafię patrzeć na projekt zarówno z perspektywy jakości, jak i architektury kodu.',
+          'about.p3': 'Pracuję głównie w technologiach C#, Blazor, .NET MAUI i Entity Framework Core.',
+          'about.p4': 'Po godzinach rozwijam własne projekty — w tym aplikację kadrowo-płacową, mobilną aplikację do wysyłek faktur do KSeF oraz mobilną aplikację do zarządzania dietą oraz listami zakupów.',
+          'skills.title': 'Umiejętności',
+          'skills.group.tech': 'Technologie',
+          'skills.group.tools': 'Narzędzia',
+          'skills.group.comp': 'Kompetencje',
+          'projects.title': 'Projekty',
+          'projects.ksef': 'Ksef Mobile App',
+          'projects.cloudflow': 'CloudFlow HR',
+          'projects.foodbook': 'Foodbook App',
+          'projects.wms': 'WMS Project',
+          'projects.tictactoe': 'TicTacToe game – mój pierwszy projekt',
+          
+          /* Badge: Technologies */
+          'badge.tech.csharp': 'C#',
+          'badge.tech.dotnetmaui': '.NET MAUI',
+          'badge.tech.aspnetcore': 'ASP.NET Core',
+          'badge.tech.blazor': 'Blazor',
+          'badge.tech.sql': 'SQL',
+          'badge.tech.ef': 'Entity Framework',
+          'badge.tech.linq': 'LINQ',
+          'badge.tech.html': 'HTML',
+          'badge.tech.restapi': 'REST API',
+          'badge.tech.winforms': 'WinForms',
+          'badge.tech.python': 'Python',
+          'badge.tech.javascript': 'JavaScript',
+          'badge.tech.git': 'Git',
+
+          /* Badge: Tools */
+          'badge.tools.azuredevops': 'Azure DevOps',
+          'badge.tools.visualstudio': 'Visual Studio',
+          'badge.tools.githubdesktop': 'GitHub Desktop',
+          'badge.tools.ssms': 'SSMS',
+          'badge.tools.pgadmin': 'pgAdmin (PostgreSQL)',
+          'badge.tools.postman': 'Postman',
+          'badge.tools.fiddler': 'Fiddler',
+          'badge.tools.cicd': 'CI/CD',
+          'badge.tools.office': 'Microsoft Office',
+          'badge.tools.issuetracking': 'Śledzenie Work Itemów (PBI/Bug)',
+          'badge.tools.reportgen': 'Generowanie raportów',
+
+          /* Badge: Competencies */
+          'badge.comp.techdoc': 'Dokumentacja techniczna',
+          'badge.comp.testing': 'Testowanie oprogramowania',
+          'badge.comp.unit': 'Testy jednostkowe',
+          'badge.comp.e2e': 'Testy end‑to‑end (E2E)',
+          'badge.comp.performance': 'Testy wydajnościowe',
+          'badge.comp.archplan': 'Planowanie architektury',
+          'badge.comp.problem': 'Rozwiązywanie problemów',
+          'badge.comp.english': 'Język angielski (zaawansowany)',
+          'badge.comp.communication': 'Wysokie umiejętności komunikacyjne',
+          'badge.comp.connections': 'Budowanie relacji międzydziałowych',
+          'badge.comp.selfmgmt': 'Samodzielność',
+          'badge.comp.teamwork': 'Praca zespołowa',
+        },
+        en: {
+          'page.title': 'Portfolio – Welcome',
+          'top.actionsLabel': 'Quick actions',
+          'lang.title': 'Language',
+          'copy.tooltip': 'Copy e‑mail to clipboard',
+          'copy.success': 'Copied to clipboard',
+          'copy.fail': 'Copy failed',
+          'social.github': 'GitHub',
+          'social.linkedin': 'LinkedIn',
+          'welcome.title': 'Welcome',
+          'welcome.lead': "My name is Przemysław Przybyszewski and I build projects that aim to solve real-world problems while growing my skills. I work as a test engineer by day, and after hours I develop projects in the .NET ecosystem, especially Blazor and .NET MAUI. I enjoy designing applications—concept, architecture, and UI—and taking part in the entire software lifecycle.",
+          'about.title': 'About me',
+          'about.p1': "I graduated from WSB Merito University in Wrocław and I'm a professional test engineer steadily moving toward .NET development.",
+          'about.p2': 'I combine testing expertise with programming skills, which lets me look at a project both from a quality perspective and code architecture.',
+          'about.p3': 'I mainly work with C#, Blazor, .NET MAUI and Entity Framework Core.',
+          'about.p4': 'After hours I build my own projects—an HR/payroll app, a mobile app for sending invoices to KSeF, and a mobile app for diet and shopping lists.',
+          'skills.title': 'Skills',
+          'skills.group.tech': 'Technologies',
+          'skills.group.tools': 'Tools',
+          'skills.group.comp': 'Competencies',
+          'projects.title': 'Projects',
+          'projects.ksef': 'Ksef Mobile App',
+          'projects.cloudflow': 'CloudFlow HR',
+          'projects.foodbook': 'Foodbook App',
+          'projects.wms': 'WMS Project',
+          'projects.tictactoe': 'TicTacToe game – my first project',
+
+          /* Badge: Technologies */
+          'badge.tech.csharp': 'C#',
+          'badge.tech.dotnetmaui': '.NET MAUI',
+          'badge.tech.aspnetcore': 'ASP.NET Core',
+          'badge.tech.blazor': 'Blazor',
+          'badge.tech.sql': 'SQL',
+          'badge.tech.ef': 'Entity Framework',
+          'badge.tech.linq': 'LINQ',
+          'badge.tech.html': 'HTML',
+          'badge.tech.restapi': 'REST API',
+          'badge.tech.winforms': 'WinForms',
+          'badge.tech.python': 'Python',
+          'badge.tech.javascript': 'JavaScript',
+          'badge.tech.git': 'Git',
+
+          /* Badge: Tools */
+          'badge.tools.azuredevops': 'Azure DevOps',
+          'badge.tools.visualstudio': 'Visual Studio',
+          'badge.tools.githubdesktop': 'GitHub Desktop',
+          'badge.tools.ssms': 'SSMS',
+          'badge.tools.pgadmin': 'pgAdmin (PostgreSQL)',
+          'badge.tools.postman': 'Postman',
+          'badge.tools.fiddler': 'Fiddler',
+          'badge.tools.cicd': 'CI/CD',
+          'badge.tools.office': 'Microsoft Office',
+          'badge.tools.issuetracking': 'Azure Boards Work Items (PBI/Bug) tracking',
+          'badge.tools.reportgen': 'Report Generation',
+
+          /* Badge: Competencies */
+          'badge.comp.techdoc': 'Technical Documentation',
+          'badge.comp.testing': 'Software Testing',
+          'badge.comp.unit': 'Unit Testing',
+          'badge.comp.e2e': 'End‑to‑End (E2E) Testing',
+          'badge.comp.performance': 'Performance Testing',
+          'badge.comp.archplan': 'Architecture Planning',
+          'badge.comp.problem': 'Problem‑Solving',
+          'badge.comp.english': 'English Language (Advanced)',
+          'badge.comp.communication': 'High Communication Skills',
+          'badge.comp.connections': 'Build Interdepartmental Connections',
+          'badge.comp.selfmgmt': 'Self‑Management',
+          'badge.comp.teamwork': 'Teamwork',
+        }
+      };
+      // Init year
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Apply dictionary and init site i18n (global across pages via localStorage)
+      SiteI18n.apply(I18N_DICT);
+      SiteI18n.init();
+
+      // Copy e-mail logic with i18n feedback + transient tooltip bubble
       const EMAIL = 'p.przybyszewski2709@gmail.com';
       const btn = document.getElementById('copyEmail');
+      // Ensure initial title matches current language
+      if (btn) {
+        const lang0 = SiteI18n.currentLang();
+        btn.setAttribute('title', SiteI18n.t('copy.tooltip', lang0));
+      }
       btn?.addEventListener('click', async () => {
         let ok = false;
         try {
@@ -123,9 +294,33 @@
           try { document.execCommand('copy'); ok = true; } catch (_) {}
           ta.remove();
         }
-        btn.setAttribute('title', ok ? 'Skopiowano!' : 'Nie udało się skopiować');
+        const lang = SiteI18n.currentLang();
+        const t = (k)=>SiteI18n.t(k, lang);
+        // Update title for accessibility; show visual tooltip bubble
+        const msg = ok ? t('copy.success') : t('copy.fail');
+        btn.setAttribute('title', msg);
+        // Create bubble
+        const bubble = document.createElement('div');
+        bubble.className = 'tooltip-bubble';
+        bubble.textContent = msg;
+        document.body.appendChild(bubble);
+        // Position bubble centered above the button
+  const r = btn.getBoundingClientRect();
+  const top = Math.max(r.top - 10, 8); // fixed coords, relative to viewport
+  const left = r.left + r.width/2;
+        bubble.style.top = `${top}px`;
+        bubble.style.left = `${left}px`;
+        // Animate in
+        requestAnimationFrame(() => bubble.classList.add('show'));
+        // Also flash subtle background on the button
         btn.style.background = ok ? 'rgba(135, 231, 158, 0.25)' : 'rgba(231, 135, 135, 0.25)';
-        setTimeout(() => { btn.style.background = ''; btn.setAttribute('title', 'Kopiuj e‑mail do schowka'); }, 1400);
+        // Cleanup after delay
+        setTimeout(() => {
+          bubble.classList.remove('show');
+          setTimeout(() => bubble.remove(), 180);
+          btn.style.background = '';
+          btn.setAttribute('title', t('copy.tooltip'));
+        }, 1400);
       });
     </script>
   </body>

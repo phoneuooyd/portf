@@ -60,6 +60,36 @@ body {
 .icon-btn:hover, .icon-link:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
 .icon { width: 20px; height: 20px; display: block; fill: currentColor; }
 
+/* Language picker styled like icon buttons */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 34px 0 12px; /* extra right space for arrow */
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08); /* swapped: use former hover/focus-like background by default */
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  font: inherit;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23eaeef7'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+.lang-switch:hover { transform: translateY(-2px); background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.14); }
+  /* Focus: lighter gray background, darker gray border (no movement/glow) */
+  .lang-switch:focus,
+  .lang-switch:focus-visible {
+    outline: none;
+    background: rgba(255,255,255,0.10); /* lighter gray instead of white */
+    border-color: rgba(255,255,255,0.16); /* darker gray border instead of white */
+  }
+#langSwitcher option { background: var(--bg); color: var(--text); }
+
 .grid {
   margin-top: 90px;
   display: grid;
@@ -112,6 +142,8 @@ h1.title {
   padding: 18px;
 }
 .panel--lg { padding: 24px; }
+/* wariant XL panelu galerii */
+.panel--xl { padding: 28px; }
 .projects h2 {
   margin: 0 0 10px;
   font-size: 24px;
@@ -140,9 +172,46 @@ h1.title {
 }
 .proj-list { list-style: none; padding: 8px 4px 4px; margin: 0; display: grid; gap: 8px; }
 .proj-list a { display: block; padding: 10px 12px; color: var(--text); text-decoration: none; border-radius: 10px; border: 1px solid transparent; transition: background .15s ease, border-color .15s ease, color .15s ease; }
+.proj-list a { display:flex; align-items:center; gap:10px; }
+.proj-icon{ width:22px; height:22px; border-radius:4px; object-fit:contain; display:block; }
 .proj-list a:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
 .proj-list a .underline { border-bottom: 2px solid var(--line); padding-bottom: 2px; }
 footer { color: #7d8797; font-size: 12px; margin-top: 32px; text-align: right; opacity:.85; }
+
+/* Small transient tooltip bubble (used for copy notifications) */
+.tooltip-bubble {
+  position: fixed; /* positioned via JS using getBoundingClientRect */
+  z-index: 10000;
+  background: rgba(24, 26, 32, 0.95);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.2;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -8px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+.tooltip-bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 10px; height: 10px;
+  background: rgba(24, 26, 32, 0.95);
+  border-left: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  transform-origin: center;
+  rotate: 45deg;
+}
+.tooltip-bubble.show {
+  opacity: 1;
+  transform: translate(-50%, -14px);
+}
 
 /* Sekcja umiejętności */
 .skills .group-title {
@@ -185,19 +254,55 @@ footer { color: #7d8797; font-size: 12px; margin-top: 32px; text-align: right; o
 .container{ max-width:900px; margin:0 auto; padding:32px 20px; }
 a{ color:#e9d758; text-decoration:none; }
 header{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+h1 .proj-icon{ display:inline-block; width:48px; height:48px; vertical-align:middle; margin-right:10px; border-radius:6px; }
 h1{ margin:24px 0 8px; font-weight:600; }
 p{ color:#9aa3b2; }
 .card{ background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:20px; }
 
 /* Odstępy między panelami na podstronach */
-.panel + .panel { margin-top: 16px; }
+.panel + .panel { margin-top: 0px; }
 .panel + .columns { margin-top: 16px; } /* odstęp między opisem a Technologiami/Roadmapą */
 
 /* Galeria obrazów na podstronach */
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
 .gallery figure { margin: 0; }
+/* Jeśli galeria ma tylko jeden element, rozciągnij go na całą szerokość */
+.gallery > figure:only-child { grid-column: 1 / -1; }
 .gallery img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); }
 .gallery figcaption { margin-top: 6px; color: var(--muted); font-size: 12px; }
+
+/* Carousel */
+.carousel { position: relative; display: grid; grid-template-rows: auto auto auto; grid-template-columns: 1fr; row-gap: 10px; }
+.carousel__viewport { position: relative; width: 100%; height: clamp(360px, 62dvh, 760px); overflow: hidden; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); }
+.carousel__track { display: flex; height: 100%; will-change: transform; }
+.carousel__slide { height: 100%; display:flex; align-items:center; justify-content:center; }
+.carousel__slide img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.carousel__btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,.35); color: #fff; border: 0; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 5; }
+.carousel__btn:hover { background: rgba(0,0,0,.5); }
+.carousel__btn.prev { left: 10px; }
+.carousel__btn.next { right: 10px; }
+.carousel__dots { display:flex; gap:6px; justify-content:center; }
+.carousel__dot { width:10px; height:10px; border-radius:50%; background: rgba(255,255,255,.25); border:0; cursor:pointer; }
+.carousel__dot.is-active { background: rgba(255,255,255,.8); }
+/* Thumbnails */
+.carousel__thumbs { display:flex; gap:8px; overflow:auto; padding:6px 2px 2px; scrollbar-width: thin; justify-content:center; }
+.carousel__thumb { border:0; padding:0; background: transparent; cursor:pointer; opacity:.7; border-radius:8px; }
+.carousel__thumb.is-active { outline:2px solid rgba(233,215,88,.85); opacity:1; }
+.carousel__thumb img { display:block; height:64px; width:auto; object-fit: cover; border-radius:8px; border:1px solid rgba(255,255,255,.08); }
+
+/* Lightbox overlay */
+.lightbox.hidden { display: none; }
+.lightbox { position: fixed; inset: 0; z-index: 9999; }
+.lightbox__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(2px); }
+.lightbox__frame { position: absolute; inset: 0; display: grid; grid-template-rows: auto 1fr auto; align-items: center; justify-items: center; padding: 24px; }
+.lightbox__viewport { position: relative; width: min(1320px, 94vw); height: min(86vh, 940px); display:flex; align-items:center; justify-content:center; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
+.lightbox__img { max-width: none; width: auto; height: auto; cursor: grab; user-select: none; will-change: transform; transition: transform 80ms ease-out; }
+.lightbox__caption { margin-top: 10px; color: var(--muted); font-size: 13px; text-align: center; }
+.lightbox__btn { position: absolute; top: 18px; background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.25); width: 40px; height: 40px; border-radius: 10px; cursor: pointer; }
+.lightbox__btn:hover { background: rgba(255,255,255,0.2); }
+.lightbox__close { right: 18px; font-size: 24px; line-height: 36px; }
+.lightbox__prev { left: 18px; font-size: 26px; }
+.lightbox__next { left: 66px; font-size: 26px; }
 
 /* Roadmap (plan rozwoju) */
 .roadmap { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
