@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="page.title">Contact Manager — Projekt</title>
+    <link rel="stylesheet" href="../landing.css" />
+    <script src="../i18n.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="../../index.html" data-i18n="nav.back">← Powrót</a>
+        <span data-i18n="proj.name">Contact Manager</span>
+        <select id="langSwitcher" class="lang-switch" style="margin-left:auto" data-i18n-attr-title="lang.title" title="Język / Language">
+          <option value="pl">Polski</option>
+          <option value="en">English</option>
+        </select>
+      </header>
+
+      <h1>Contact Manager</h1>
+
+      <!-- Opis + Funkcjonalności obok siebie -->
+      <section class="columns">
+        <div class="panel">
+          <h2 class="accent" data-i18n="sec.purpose">Cel aplikacji</h2>
+          <p data-i18n="purpose.text">
+            Aplikacja webowa do zarządzania kontaktami, zbudowana w Django. Umożliwia pełny CRUD kontaktów, wystawia REST API,
+            oferuje dashboard ze statystykami i wykresami, obsługuje import/eksport CSV oraz prezentuje pogodę dla miasta kontaktu
+            w czasie rzeczywistym. Projekt zawiera 32 testy jednostkowe i integracyjne pokrywające API, walidatory i import CSV.
+          </p>
+        </div>
+        <div class="panel">
+          <h2 class="accent" data-i18n="sec.features">Funkcjonalności</h2>
+          <ul class="roadmap">
+            <li class="done" data-i18n="feat.crud">CRUD kontaktów z paginacją</li>
+            <li class="done" data-i18n="feat.api">REST API – GET, POST, PUT, DELETE</li>
+            <li class="done" data-i18n="feat.dashboard">Dashboard statystyk (Chart.js)</li>
+            <li class="done" data-i18n="feat.search">Wyszukiwanie i sortowanie kontaktów</li>
+            <li class="done" data-i18n="feat.weather">Pogoda dla miasta kontaktu (AJAX, cache)</li>
+            <li class="done" data-i18n="feat.csv">Import i eksport CSV z walidacją i deduplikacją</li>
+            <li class="done" data-i18n="feat.admin">Panel administracyjny Django</li>
+            <li class="done" data-i18n="feat.tests">32 testy jednostkowe i integracyjne</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Dół: 2 kolumny (Technologie | Endpointy API) -->
+      <section class="columns">
+        <div class="panel">
+          <h2 class="accent" data-i18n="sec.tech">Technologie</h2>
+          <div class="skills-grid">
+            <span class="skill-badge" data-i18n="badge.python">Python</span>
+            <span class="skill-badge" data-i18n="badge.django">Django 5.0</span>
+            <span class="skill-badge" data-i18n="badge.drf">Django REST Framework</span>
+            <span class="skill-badge" data-i18n="badge.pytest">pytest</span>
+            <span class="skill-badge" data-i18n="badge.chartjs">Chart.js</span>
+            <span class="skill-badge" data-i18n="badge.js">JavaScript</span>
+            <span class="skill-badge" data-i18n="badge.html">HTML / CSS</span>
+            <span class="skill-badge" data-i18n="badge.sqlite">SQLite</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="accent" data-i18n="sec.api">REST API</h2>
+          <ul class="roadmap">
+            <li class="done" data-i18n="api.list">GET /api/contacts/ – lista kontaktów</li>
+            <li class="done" data-i18n="api.create">POST /api/contacts/ – utwórz kontakt</li>
+            <li class="done" data-i18n="api.detail">GET /api/contacts/{id}/ – szczegóły</li>
+            <li class="done" data-i18n="api.update">PUT /api/contacts/{id}/ – edytuj</li>
+            <li class="done" data-i18n="api.delete">DELETE /api/contacts/{id}/ – usuń</li>
+            <li class="done" data-i18n="api.weather">GET /api/weather/?city= – pogoda</li>
+          </ul>
+        </div>
+      </section>
+
+
+    </div>
+  </body>
+  <script>
+    SiteI18n.apply({
+      pl: {
+        'page.title': 'Contact Manager — Projekt',
+        'nav.back': '← Powrót',
+        'proj.name': 'Contact Manager',
+        'lang.title': 'Język / Language',
+        'sec.purpose': 'Cel aplikacji',
+        'purpose.text': 'Aplikacja webowa do zarządzania kontaktami, zbudowana w Django. Umożliwia pełny CRUD kontaktów, wystawia REST API, oferuje dashboard ze statystykami i wykresami, obsługuje import/eksport CSV oraz prezentuje pogodę dla miasta kontaktu w czasie rzeczywistym. Projekt zawiera 32 testy jednostkowe i integracyjne pokrywające API, walidatory i import CSV.',
+        'sec.features': 'Funkcjonalności',
+        'feat.crud': 'CRUD kontaktów z paginacją',
+        'feat.api': 'REST API – GET, POST, PUT, DELETE',
+        'feat.dashboard': 'Dashboard statystyk (Chart.js)',
+        'feat.search': 'Wyszukiwanie i sortowanie kontaktów',
+        'feat.weather': 'Pogoda dla miasta kontaktu (AJAX, cache)',
+        'feat.csv': 'Import i eksport CSV z walidacją i deduplikacją',
+        'feat.admin': 'Panel administracyjny Django',
+        'feat.tests': '32 testy jednostkowe i integracyjne',
+        'sec.tech': 'Technologie',
+        'badge.python': 'Python',
+        'badge.django': 'Django 5.0',
+        'badge.drf': 'Django REST Framework',
+        'badge.pytest': 'pytest',
+        'badge.chartjs': 'Chart.js',
+        'badge.js': 'JavaScript',
+        'badge.html': 'HTML / CSS',
+        'badge.sqlite': 'SQLite',
+        'sec.api': 'REST API',
+        'api.list': 'GET /api/contacts/ – lista kontaktów',
+        'api.create': 'POST /api/contacts/ – utwórz kontakt',
+        'api.detail': 'GET /api/contacts/{id}/ – szczegóły',
+        'api.update': 'PUT /api/contacts/{id}/ – edytuj',
+        'api.delete': 'DELETE /api/contacts/{id}/ – usuń',
+        'api.weather': 'GET /api/weather/?city= – pogoda',
+        'link.github': 'Zobacz na GitHub →'
+      },
+      en: {
+        'page.title': 'Contact Manager — Project',
+        'nav.back': '← Back',
+        'proj.name': 'Contact Manager',
+        'lang.title': 'Language',
+        'sec.purpose': 'Purpose',
+        'purpose.text': 'A Django-based web application for managing contacts. Provides full CRUD operations, a REST API, a statistics dashboard with charts, CSV import/export with validation and deduplication, and real-time weather for a contact\'s city. The project includes 32 unit and integration tests covering the API, validators, and CSV import.',
+        'sec.features': 'Features',
+        'feat.crud': 'Contact CRUD with pagination',
+        'feat.api': 'REST API – GET, POST, PUT, DELETE',
+        'feat.dashboard': 'Statistics dashboard (Chart.js)',
+        'feat.search': 'Search and sort contacts',
+        'feat.weather': 'Weather for contact\'s city (AJAX, cache)',
+        'feat.csv': 'CSV import & export with validation and deduplication',
+        'feat.admin': 'Django admin panel',
+        'feat.tests': '32 unit and integration tests',
+        'sec.tech': 'Technologies',
+        'badge.python': 'Python',
+        'badge.django': 'Django 5.0',
+        'badge.drf': 'Django REST Framework',
+        'badge.pytest': 'pytest',
+        'badge.chartjs': 'Chart.js',
+        'badge.js': 'JavaScript',
+        'badge.html': 'HTML / CSS',
+        'badge.sqlite': 'SQLite',
+        'sec.api': 'REST API',
+        'api.list': 'GET /api/contacts/ – list contacts',
+        'api.create': 'POST /api/contacts/ – create contact',
+        'api.detail': 'GET /api/contacts/{id}/ – details',
+        'api.update': 'PUT /api/contacts/{id}/ – update',
+        'api.delete': 'DELETE /api/contacts/{id}/ – delete',
+        'api.weather': 'GET /api/weather/?city= – weather',
+        'link.github': 'View on GitHub →'
+      }
+    });
+    SiteI18n.init();
+  </script>
+</html>

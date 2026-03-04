@@ -66,9 +66,10 @@
       <section class="panel">
         <h2 class="accent" data-i18n="sec.purpose">Cel aplikacji</h2>
         <p data-i18n="purpose.text">
-          Aplikacja do szybkiego planowania diety, układania jadłospisów i zarządzania listą zakupów.
-          Pozwala katalogować przepisy, liczyć makroskładniki i tworzyć tygodniowe plany posiłków. Posiada funkcję 
-          pobierania składników odżywczych z bazy OpenFoodFacts. Aplikacja mobilna na .NET MAUI z lokalną bazą SQLite.
+          Kompleksowa aplikacja mobilna do zarządzania przepisami, planowania posiłków i tworzenia list zakupów.
+          Umożliwia import przepisów z internetu, automatyczne obliczanie wartości odżywczych, synchronizację danych
+          z chmurą Supabase oraz pełną personalizację wyglądu. Zbudowana w .NET MAUI 9 z lokalną bazą SQLite
+          i Entity Framework Core. Zawiera testy jednostkowe xUnit oraz wielojęzyczny interfejs (PL, EN, DE, ES, FR, KO).
         </p>
       </section>
 
@@ -79,15 +80,32 @@
           <div class="skills-grid">
             <span class="skill-badge" data-i18n="badge.tech.csharp">C#</span>
             <span class="skill-badge" data-i18n="badge.tech.dotnetmaui">.NET MAUI</span>
+            <span class="skill-badge" data-i18n="badge.tech.dotnet9">.NET 9</span>
             <span class="skill-badge" data-i18n="badge.tech.sqlite">SQLite</span>
+            <span class="skill-badge" data-i18n="badge.tech.ef">Entity Framework Core</span>
+            <span class="skill-badge" data-i18n="badge.tech.supabase">Supabase</span>
+            <span class="skill-badge" data-i18n="badge.tech.mvvm">MVVM</span>
+            <span class="skill-badge" data-i18n="badge.tech.xaml">XAML</span>
+            <span class="skill-badge" data-i18n="badge.tech.xunit">xUnit</span>
           </div>
         </div>
         <div class="panel">
           <h2 class="accent" data-i18n="sec.roadmap">Plan rozwoju</h2>
           <ul class="roadmap">
-            <li class="wip" data-i18n="road.fb.account">Konto użytkownika</li>
-            <li data-i18n="road.fb.io">Import/eksport przepisów</li>
-            <li data-i18n="road.fb.shopping">Zakupy i planowanie posiłków</li>
+            <li class="done" data-i18n="road.fb.crud">Zarządzanie przepisami (CRUD, import z URL)</li>
+            <li class="done" data-i18n="road.fb.ingredients">Baza składników z wartościami odżywczymi</li>
+            <li class="done" data-i18n="road.fb.planner">Planer posiłków (zakres dat, liczba porcji)</li>
+            <li class="done" data-i18n="road.fb.shopping">Automatyczne listy zakupów</li>
+            <li class="done" data-i18n="road.fb.folders">Foldery i etykiety przepisów (drag &amp; drop)</li>
+            <li class="done" data-i18n="road.fb.account">Konto użytkownika (Supabase Auth, JWT)</li>
+            <li class="done" data-i18n="road.fb.sync">Synchronizacja z chmurą (Supabase)</li>
+            <li class="done" data-i18n="road.fb.archive">Archiwizacja i eksport/import danych</li>
+            <li class="done" data-i18n="road.fb.i18n">Wielojęzyczny interfejs (PL, EN, DE, ES, FR, KO)</li>
+            <li class="done" data-i18n="road.fb.tests">Testy jednostkowe (xUnit)</li>
+            <li data-i18n="road.fb.notifications">Powiadomienia o posiłkach</li>
+            <li data-i18n="road.fb.sharing">Udostępnianie przepisów</li>
+            <li data-i18n="road.fb.barcode">Skaner kodów kreskowych</li>
+            <li data-i18n="road.fb.widgets">Widżety na ekran główny</li>
           </ul>
         </div>
       </section>
@@ -103,15 +121,32 @@
         'proj.name': 'Foodbook App',
         'lang.title': 'Język / Language',
         'sec.purpose': 'Cel aplikacji',
-        'purpose.text': 'Aplikacja do szybkiego planowania diety, układania jadłospisów i zarządzania listą zakupów. Pozwala katalogować przepisy, liczyć makroskładniki i tworzyć tygodniowe plany posiłków. Posiada funkcję pobierania składników odżywczych z bazy OpenFoodFacts. Aplikacja mobilna na .NET MAUI z lokalną bazą SQLite.',
+        'purpose.text': 'Kompleksowa aplikacja mobilna do zarządzania przepisami, planowania posiłków i tworzenia list zakupów. Umożliwia import przepisów z internetu, automatyczne obliczanie wartości odżywczych, synchronizację danych z chmurą Supabase oraz pełną personalizację wyglądu. Zbudowana w .NET MAUI 9 z lokalną bazą SQLite i Entity Framework Core. Zawiera testy jednostkowe xUnit oraz wielojęzyczny interfejs (PL, EN, DE, ES, FR, KO).',
         'sec.tech': 'Technologie',
         'sec.roadmap': 'Plan rozwoju',
         'badge.tech.csharp': 'C#',
         'badge.tech.dotnetmaui': '.NET MAUI',
+        'badge.tech.dotnet9': '.NET 9',
         'badge.tech.sqlite': 'SQLite',
-        'road.fb.account': 'Konto użytkownika',
-        'road.fb.io': 'Import/eksport przepisów',
-        'road.fb.shopping': 'Zakupy i planowanie posiłków'
+        'badge.tech.ef': 'Entity Framework Core',
+        'badge.tech.supabase': 'Supabase',
+        'badge.tech.mvvm': 'MVVM',
+        'badge.tech.xaml': 'XAML',
+        'badge.tech.xunit': 'xUnit',
+        'road.fb.crud': 'Zarządzanie przepisami (CRUD, import z URL)',
+        'road.fb.ingredients': 'Baza składników z wartościami odżywczymi',
+        'road.fb.planner': 'Planer posiłków (zakres dat, liczba porcji)',
+        'road.fb.shopping': 'Automatyczne listy zakupów',
+        'road.fb.folders': 'Foldery i etykiety przepisów (drag & drop)',
+        'road.fb.account': 'Konto użytkownika (Supabase Auth, JWT)',
+        'road.fb.sync': 'Synchronizacja z chmurą (Supabase)',
+        'road.fb.archive': 'Archiwizacja i eksport/import danych',
+        'road.fb.i18n': 'Wielojęzyczny interfejs (PL, EN, DE, ES, FR, KO)',
+        'road.fb.tests': 'Testy jednostkowe (xUnit)',
+        'road.fb.notifications': 'Powiadomienia o posiłkach',
+        'road.fb.sharing': 'Udostępnianie przepisów',
+        'road.fb.barcode': 'Skaner kodów kreskowych',
+        'road.fb.widgets': 'Widżety na ekran główny'
       },
       en: {
         'page.title': 'Foodbook App — Project',
@@ -119,15 +154,32 @@
         'proj.name': 'Foodbook App',
         'lang.title': 'Language',
         'sec.purpose': 'Purpose',
-        'purpose.text': 'An app for fast diet planning, meal plans and shopping lists. Catalog recipes, calculate macros and build weekly plans. Includes nutrition data fetch from OpenFoodFacts. Mobile app built with .NET MAUI using a local SQLite database.',
+        'purpose.text': 'A comprehensive mobile app for managing recipes, planning meals and generating shopping lists. Import recipes from the web, calculate nutritional values automatically, sync data with Supabase cloud, and personalise the look and feel. Built with .NET MAUI 9, SQLite and Entity Framework Core. Includes xUnit tests and a multilingual interface (PL, EN, DE, ES, FR, KO).',
         'sec.tech': 'Technologies',
         'sec.roadmap': 'Roadmap',
         'badge.tech.csharp': 'C#',
         'badge.tech.dotnetmaui': '.NET MAUI',
+        'badge.tech.dotnet9': '.NET 9',
         'badge.tech.sqlite': 'SQLite',
-        'road.fb.account': 'User account',
-        'road.fb.io': 'Import/Export recipes',
-        'road.fb.shopping': 'Shopping and meal planning'
+        'badge.tech.ef': 'Entity Framework Core',
+        'badge.tech.supabase': 'Supabase',
+        'badge.tech.mvvm': 'MVVM',
+        'badge.tech.xaml': 'XAML',
+        'badge.tech.xunit': 'xUnit',
+        'road.fb.crud': 'Recipe management (CRUD, import from URL)',
+        'road.fb.ingredients': 'Ingredient database with nutritional values',
+        'road.fb.planner': 'Meal planner (date range, serving sizes)',
+        'road.fb.shopping': 'Automatic shopping lists',
+        'road.fb.folders': 'Recipe folders & labels (drag & drop)',
+        'road.fb.account': 'User account (Supabase Auth, JWT)',
+        'road.fb.sync': 'Cloud sync (Supabase)',
+        'road.fb.archive': 'Data archiving and export/import',
+        'road.fb.i18n': 'Multilingual UI (PL, EN, DE, ES, FR, KO)',
+        'road.fb.tests': 'Unit tests (xUnit)',
+        'road.fb.notifications': 'Meal reminder notifications',
+        'road.fb.sharing': 'Recipe sharing between users',
+        'road.fb.barcode': 'Barcode scanner',
+        'road.fb.widgets': 'Home screen widgets'
       }
     });
     SiteI18n.init();
