@@ -251,7 +251,7 @@ footer { color: #7d8797; font-size: 12px; margin-top: 32px; text-align: right; o
 .m-0 { margin: 0; }
 
 /* Wspólne style dla prostych podstron projektów */
-.container{ max-width:900px; margin:0 auto; padding:32px 20px; }
+.container{ max-width:1200px; margin:0 auto; padding:32px 20px; }
 a{ color:#e9d758; text-decoration:none; }
 header{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
 h1 .proj-icon{ display:inline-block; width:48px; height:48px; vertical-align:middle; margin-right:10px; border-radius:6px; }
