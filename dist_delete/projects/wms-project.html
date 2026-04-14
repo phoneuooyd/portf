@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="page.title">WMS Project — Projekt</title>
+    <link rel="stylesheet" href="../landing.css" />
+    <script src="../i18n.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+  <a href="../../index.html" data-i18n="nav.back">← Powrót</a>
+        <span data-i18n="proj.name">WMS Project</span>
+        <select id="langSwitcher" class="lang-switch" style="margin-left:auto" data-i18n-attr-title="lang.title" title="Język / Language">
+          <option value="pl">Polski</option>
+          <option value="en">English</option>
+        </select>
+      </header>
+
+  <h1><img class="proj-icon" src="../../icons/WMSProjektIcon.png" alt=""/>WMS Project</h1>
+
+      <!-- Galeria u góry -->
+      <section class="panel panel--xl">
+        <div class="gallery" data-carousel>
+          <figure>
+            <img src="../../images/WMSProject/WMS1.jpg" alt="WMS — ekran główny i konfiguracja" />
+            <figcaption>Ekran główny i konfiguracja</figcaption>
+          </figure>
+          <figure>
+            <img src="../../images/WMSProject/WMS2.jpg" alt="WMS — operacje i podgląd danych" />
+            <figcaption>Operacje i podgląd danych</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Opis pod galerią -->
+      <section class="panel">
+        <h2 class="accent" data-i18n="sec.purpose">Cel aplikacji</h2>
+        <p data-i18n="purpose.text">
+          System zarządzania magazynem (WMS) stworzony w krótkim czasie (ok. tydzień) w technologii WinForms.
+          Obejmuje podstawowe operacje CRUD do ewidencjonowania stanu magazynowego samochodów (oraz informacji o samochodach).
+          Aplikacja desktopowa na .NET Framework do pracy w sieci lokalnej. Aplikacja jest bardzo prosta, powstała jako 
+          zadanie rekrutacyjne do firmy związanej z motoryzacją.
+        </p>
+      </section>
+
+      <!-- Dół: 2 kolumny -->
+      <section class="columns">
+        <div class="panel">
+          <h2 class="accent" data-i18n="sec.tech">Technologie</h2>
+          <div class="skills-grid">
+            <span class="skill-badge" data-i18n="badge.tech.csharp">C#</span>
+            <span class="skill-badge" data-i18n="badge.tech.winforms">WinForms</span>
+            <span class="skill-badge" data-i18n="badge.tech.dotnetfw">.NET Framework</span>
+            <span class="skill-badge" data-i18n="badge.tech.mssql">MS SQL Server</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="accent" data-i18n="sec.roadmap">Plan rozwoju</h2>
+          <ul class="roadmap">
+            <li class="done" data-i18n="road.wms.wpf">Przepisanie na WPF</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="../carousel.js"></script>
+  <script src="../gallery.js"></script>
+  <script>
+    SiteI18n.apply({
+      pl: {
+        'page.title': 'WMS Project — Projekt',
+        'nav.back': '← Powrót',
+        'proj.name': 'WMS Project',
+        'lang.title': 'Język / Language',
+        'sec.purpose': 'Cel aplikacji',
+        'purpose.text': 'System zarządzania magazynem (WMS) stworzony w krótkim czasie (ok. tydzień) w technologii WinForms. Obejmuje podstawowe operacje CRUD do ewidencjonowania stanu magazynowego samochodów (oraz informacji o samochodach). Aplikacja desktopowa na .NET Framework do pracy w sieci lokalnej.',
+        'sec.tech': 'Technologie',
+        'sec.roadmap': 'Plan rozwoju',
+        'badge.tech.csharp': 'C#',
+        'badge.tech.winforms': 'WinForms',
+        'badge.tech.dotnetfw': '.NET Framework',
+        'badge.tech.mssql': 'MS SQL Server',
+        'road.wms.wpf': 'Przepisanie na WPF'
+      },
+      en: {
+        'page.title': 'WMS Project — Project',
+        'nav.back': '← Back',
+        'proj.name': 'WMS Project',
+        'lang.title': 'Language',
+        'sec.purpose': 'Purpose',
+        'purpose.text': 'A warehouse management system (WMS) created in a short time (~1 week) with WinForms. Covers basic CRUD operations to keep inventory records of cars (and their details). Desktop app on .NET Framework for local network use.',
+        'sec.tech': 'Technologies',
+        'sec.roadmap': 'Roadmap',
+        'badge.tech.csharp': 'C#',
+        'badge.tech.winforms': 'WinForms',
+        'badge.tech.dotnetfw': '.NET Framework',
+        'badge.tech.mssql': 'MS SQL Server',
+        'road.wms.wpf': 'Rewrite to WPF'
+      }
+    });
+    SiteI18n.init();
+  </script>
+  </html>
