@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <header>
-    <a href="../index.html" data-i18n="nav.back">← Powrót</a>
+    <a href="../../index.html" data-i18n="nav.back">← Powrót</a>
         <span data-i18n="proj.name">TicTacToe — mój pierwszy projekt</span>
         <select id="langSwitcher" class="lang-switch" style="margin-left:auto" data-i18n-attr-title="lang.title" title="Język / Language">
           <option value="pl">Polski</option>
@@ -18,7 +18,7 @@
         </select>
       </header>
 
-  <h1><img class="proj-icon" src="../icons/TicTacToeIcon.png" alt=""/><span data-i18n="proj.name">TicTacToe — mój pierwszy projekt</span></h1>
+  <h1><img class="proj-icon" src="../../icons/TicTacToeIcon.png" alt=""/><span data-i18n="proj.name">TicTacToe — mój pierwszy projekt</span></h1>
 
       <!-- Galeria u góry -->
       <section class="panel panel--lg">
@@ -83,7 +83,11 @@
       (function(){
         const paths = [
           '../components/tictactoe/tictactoe.js',
-          '/portf/components/tictactoe/tictactoe.js'
+          '../../public/components/tictactoe/tictactoe.js',
+          '../../components/tictactoe/tictactoe.js',
+          './components/tictactoe/tictactoe.js',
+          '/portf/components/tictactoe/tictactoe.js',
+          '/components/tictactoe/tictactoe.js'
         ];
         function load(i){
           if(i>=paths.length){ console.error('TicTacToe: nie udało się załadować skryptu komponentu'); return; }
