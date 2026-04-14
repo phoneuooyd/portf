@@ -63,8 +63,7 @@
           <h2 class="accent" data-i18n="sec.purpose">Cel aplikacji</h2>
           <p data-i18n="purpose.text">
             Aplikacja kadrowo‑płacowa działająca w pełni w chmurze, łącząca wygodę Blazor WebAssembly z wydajnością SSR (Blazor Server)
-            dla płynnego UX i krótkiego czasu odpowiedzi. Umożliwia obsługę pełnego cyklu HR: kartoteki pracowników, urlopy, rekrutacje,
-            analitykę KPI oraz integracje z zewnętrznymi systemami.
+            dla płynnego UX i krótkiego czasu odpowiedzi. Umożliwia obsługę pełnego cyklu HR: kartoteki pracowników, absencje, delegacje, teczkę pracownika, naliczanie wynagrodzeń.
           </p>
       </section>
 
@@ -85,8 +84,12 @@
             <h2 class="accent" data-i18n="sec.roadmap">Plan rozwoju</h2>
           <ul class="roadmap">
             <li class="done" data-i18n="road.cf.import">Import danych</li>
-            <li class="wip" data-i18n="road.cf.kpi">Analityka KPI</li>
             <li data-i18n="road.cf.automation">Automatyzacja procesów</li>
+            <li data-i18n="road.cf.payroll">Udoskonalenie modułu płacowego</li>
+            <li data-i18n="road.cf.ezus">Integracja z usługą eZUS w celu wysyłania raportów DRA/RCA/RSA</li>
+            <li data-i18n="road.cf.prints">Wydruki dokumentów / raporty</li>
+            <li data-i18n="road.cf.financial">Moduł Księgowo-Finansowy (KSeF, JPK)</li>
+            <li data-i18n="road.cf.beta">Udostępnienie do testów beta dla użytkowników early-access</li>
           </ul>
         </div>
       </section>
@@ -112,7 +115,12 @@
           'badge.tech.sql': 'SQL',
           'road.cf.import': 'Import danych',
           'road.cf.kpi': 'Analityka KPI',
-          'road.cf.automation': 'Automatyzacja procesów'
+          'road.cf.automation': 'Automatyzacja procesów',
+          'road.cf.payroll': 'Udoskonalenie modułu płacowego',
+          'road.cf.ezus': 'Integracja z usługą eZUS w celu wysyłania raportów DRA/RCA/RSA',
+          'road.cf.prints': 'Wydruki dokumentów / raporty',
+          'road.cf.financial': 'Moduł Księgowo-Finansowy (KSeF, JPK)',
+          'road.cf.beta': 'Udostępnienie do testów beta dla użytkowników early-access'
         },
         en: {
           'page.title': 'CloudFlow HR — Project',
@@ -130,7 +138,12 @@
           'badge.tech.sql': 'SQL',
           'road.cf.import': 'Data import',
           'road.cf.kpi': 'KPI analytics',
-          'road.cf.automation': 'Process automation'
+          'road.cf.automation': 'Process automation',
+          'road.cf.payroll': 'Payroll module improvements',
+          'road.cf.ezus': 'Integration with eZUS service for sending DRA/RCA/RSA reports',
+          'road.cf.prints': 'Document / report prints',
+          'road.cf.financial': 'Accounting and Finance module (KSeF, JPK)',
+          'road.cf.beta': 'Beta release for early-access users'
         }
       });
       SiteI18n.init();
