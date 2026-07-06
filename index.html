@@ -30,9 +30,7 @@
         <section class="welcome" aria-labelledby="welcome-title">
           <h1 id="welcome-title" class="title"><span data-i18n="welcome.title">Witaj</span><span style="color: var(--muted)">.</span></h1>
           <p class="lead" data-i18n="welcome.lead">
-            Nazywam się Przemysław Przybyszewski i tworzę projekty, które odpowiadają na problemy rzeczywiste oraz rozwijają moje umiejętności. 
-            Na co dzień pracuję jako inżynier testów, a w wolnym czasie rozwijam projekty w ekosystemie .NET, szczególnie w Blazorze i .NET MAUI. 
-            Lubię projektować aplikacje, tworzyć koncepcję, architekturę, design i brać udział w całym cyklu życia oprogramowania.
+            Nazywam się Przemysław Przybyszewski. Pracuję jako .NET Developer w PKP PLK S.A., gdzie rozwijam systemy kolejowe. Wcześniej przez kilka lat byłem inżynierem testów, co dało mi unikalne spojrzenie na jakość i architekturę kodu. W wolnym czasie buduję projekty w ekosystemie .NET — szczególnie w Blazorze i .NET MAUI.
           </p>
         </section>
 
@@ -40,17 +38,65 @@
         <section class="panel about" aria-labelledby="about-title">
           <h2 id="about-title" class="accent" data-i18n="about.title">O mnie</h2>
           <p style="margin: 0 0 8px; color: var(--muted);" data-i18n="about.p1">
-            Jestem absolwentem Uniwersytetu WSB Merito we Wrocławiu oraz zawodowym inżynierem testów, który konsekwentnie rozwija się w kierunku programisty .NET.
+            Absolwent Uniwersytetu WSB Merito we Wrocławiu. Pracuję jako .NET Developer w PKP PLK S.A., gdzie rozwijam oprogramowanie dla systemów kolejowych. Posiadam certyfikaty ISTQB Foundation Level 4.0 oraz EPAM .NET Fundamentals.
           </p>
           <p style="margin: 0 0 8px; color: var(--muted);" data-i18n="about.p2">
-            Na co dzień łączę wiedzę testerską z umiejętnościami programistycznymi, dzięki czemu potrafię patrzeć na projekt zarówno z perspektywy jakości, jak i architektury kodu.
+            Przez kilka lat pracowałem jako inżynier testów, dzięki czemu patrzę na kod z perspektywy zarówno architekta, jak i osoby dbającej o jakość — znam typowe błędy i wiem, jak im zapobiegać już na etapie projektowania.
           </p>
           <p style="margin: 0 0 8px; color: var(--muted);" data-i18n="about.p3">
-            Pracuję głównie w technologiach C#, Blazor, .NET MAUI i Entity Framework Core.
+            Główny stack: C#, ASP.NET Core, Blazor, Entity Framework Core, xUnit/NUnit, SQL, REST API.
           </p>
           <p style="margin: 0; color: var(--muted);" data-i18n="about.p4">
-            w wolnym czasie rozwijam własne projekty — w tym aplikację kadrowo-płacową, mobilną aplikację do wysyłek faktur do KSeF oraz mobilną aplikację do zarządzania dietą oraz listami zakupów.
+            W wolnym czasie rozwijam własne projekty — aplikację kadrowo-płacową CloudFlow, mobilną aplikację FoodBook oraz aplikację do wysyłki faktur do KSeF.
           </p>
+        </section>
+
+        <section class="panel certs" aria-labelledby="certs-title">
+          <h2 id="certs-title" class="accent" data-i18n="certs.title">Certyfikaty</h2>
+          <div class="cert-grid">
+            <a class="cert-card" href="https://certificates.epam.com/certificates/4a29c3ab-1ca6-4632-b20f-088761bcc914" target="_blank" rel="noopener noreferrer">
+              <img class="cert-image" src="images/epam.png" alt="EPAM .NET Fundamentals" data-i18n-attr-alt="certs.epam.alt" />
+              <div class="cert-content">
+                <strong data-i18n="certs.epam.title">EPAM .NET Fundamentals</strong>
+                <span class="cert-meta" data-i18n="certs.epam.meta">EPAM Systems · 2025 · 4 miesiące</span>
+                <ul class="cert-skills">
+                  <li data-i18n="certs.epam.skill1">C# Fundamentals (OOP, generics, LINQ)</li>
+                  <li data-i18n="certs.epam.skill2">ASP.NET Core Fundamentals (DI, middleware pipeline, configuration)</li>
+                  <li data-i18n="certs.epam.skill3">REST API development (controllers, routing, model binding, validation)</li>
+                  <li data-i18n="certs.epam.skill4">Entity Framework Core (DbContext, migrations, relationships, LINQ queries)</li>
+                  <li data-i18n="certs.epam.skill5">Asynchronous programming (async/await, Task-based programming, CancellationToken)</li>
+                  <li data-i18n="certs.epam.skill6">Multithreading basics (ThreadPool, Task Parallel Library)</li>
+                  <li data-i18n="certs.epam.skill7">Reflection (type inspection, dynamic invocation, attributes)</li>
+                  <li data-i18n="certs.epam.skill8">Serialization (System.Text.Json, XML serialization, custom converters)</li>
+                  <li data-i18n="certs.epam.skill9">Design Patterns & SOLID principles (Clean Architecture basics)</li>
+                  <li data-i18n="certs.epam.skill10">Unit Testing fundamentals (xUnit, AAA pattern)</li>
+                  <li data-i18n="certs.epam.skill11">Mocking with Moq (stubs, mocks, verification, setups)</li>
+                  <li data-i18n="certs.epam.skill12">SQL fundamentals (JOINs, aggregations, indexing basics)</li>
+                </ul>
+              </div>
+            </a>
+            <a class="cert-card" href="https://app.skillsclub.com/credential/294623-54601d2bd5f694b400836415ad78ab3db74d729618ef1c28814b3b2be082dc5c?locale=en" target="_blank" rel="noopener noreferrer">
+              <img class="cert-image" src="images/istqb.png" alt="ISTQB Foundation Level 4.0" data-i18n-attr-alt="certs.istqb.alt" />
+              <div class="cert-content">
+                <strong data-i18n="certs.istqb.title">ISTQB® Certified Tester Foundation Level 4.0</strong>
+                <span class="cert-meta" data-i18n="certs.istqb.meta">ISTQB · 2024 · 2 dni</span>
+                <ul class="cert-skills">
+                  <li data-i18n="certs.istqb.skill1">Fundamentals of software testing (objectives, principles, psychology of testing)</li>
+                  <li data-i18n="certs.istqb.skill2">Test levels (unit, integration, system, acceptance testing)</li>
+                  <li data-i18n="certs.istqb.skill3">Test types (functional, non-functional, regression, exploratory testing)</li>
+                  <li data-i18n="certs.istqb.skill4">Static testing techniques (reviews, walkthroughs, inspections)</li>
+                  <li data-i18n="certs.istqb.skill5">Test design techniques (equivalence partitioning, boundary value analysis, decision tables)</li>
+                  <li data-i18n="certs.istqb.skill6">Test management basics (test planning, estimation, prioritization, risk-based testing)</li>
+                  <li data-i18n="certs.istqb.skill7">Defect lifecycle (bug reporting, severity vs priority, defect management process)</li>
+                  <li data-i18n="certs.istqb.skill8">Test tools and automation basics (test execution tools, CI/CD awareness)</li>
+                  <li data-i18n="certs.istqb.skill9">Agile testing principles (shift-left testing, continuous testing in Scrum/Kanban)</li>
+                  <li data-i18n="certs.istqb.skill10">Test metrics and reporting (coverage, defect density, test progress reporting)</li>
+                  <li data-i18n="certs.istqb.skill11">Configuration management and test environments basics</li>
+                </ul>
+              </div>
+            </a>
+            
+          </div>
         </section>
 
         <!-- Sekcja Umiejętności -->
@@ -60,23 +106,36 @@
           <h3 class="group-title" data-i18n="skills.group.tech">Technologie</h3>
           <div class="skills-grid">
             <span class="skill-badge" data-i18n="badge.tech.csharp">C#</span>
-            <span class="skill-badge" data-i18n="badge.tech.dotnetmaui">.NET MAUI</span>
+            <span class="skill-badge" data-i18n="badge.tech.dotnet">.NET</span>
             <span class="skill-badge" data-i18n="badge.tech.aspnetcore">ASP.NET Core</span>
+            <span class="skill-badge" data-i18n="badge.tech.webapi">Web API</span>
             <span class="skill-badge" data-i18n="badge.tech.blazor">Blazor</span>
+            <span class="skill-badge" data-i18n="badge.tech.dotnetmaui">.NET MAUI</span>
+            <span class="skill-badge" data-i18n="badge.tech.entityframeworkcore">Entity Framework Core</span>
             <span class="skill-badge" data-i18n="badge.tech.sql">SQL</span>
-            <span class="skill-badge" data-i18n="badge.tech.ef">Entity Framework</span>
             <span class="skill-badge" data-i18n="badge.tech.linq">LINQ</span>
-            <span class="skill-badge" data-i18n="badge.tech.html">HTML</span>
             <span class="skill-badge" data-i18n="badge.tech.restapi">REST API</span>
-            <span class="skill-badge" data-i18n="badge.tech.winforms">WinForms</span>
+            <span class="skill-badge" data-i18n="badge.tech.xunit">xUnit</span>
+            <span class="skill-badge" data-i18n="badge.tech.nunit">NUnit</span>
+            <span class="skill-badge" data-i18n="badge.tech.mstest">MSTest</span>
+            <span class="skill-badge" data-i18n="badge.tech.moq">Moq</span>
+            <span class="skill-badge" data-i18n="badge.tech.unittesting">Unit Testing</span>
+            <span class="skill-badge" data-i18n="badge.tech.di">Dependency Injection</span>
+            <span class="skill-badge" data-i18n="badge.tech.solid">SOLID</span>
+            <span class="skill-badge" data-i18n="badge.tech.designpatterns">Design Patterns</span>
+            <span class="skill-badge" data-i18n="badge.tech.cleanarch">Clean Architecture</span>
+            <span class="skill-badge" data-i18n="badge.tech.asyncawait">async/await</span>
+            <span class="skill-badge" data-i18n="badge.tech.multithreading">Multithreading</span>
+            <span class="skill-badge" data-i18n="badge.tech.concurrency">Concurrency</span>
+            <span class="skill-badge" data-i18n="badge.tech.reflection">Reflection</span>
+            <span class="skill-badge" data-i18n="badge.tech.systemtextjson">System.Text.Json</span>
+            <span class="skill-badge" data-i18n="badge.tech.html">HTML</span>
+            <span class="skill-badge" data-i18n="badge.tech.css">CSS</span>
+            <span class="skill-badge" data-i18n="badge.tech.javascript">JavaScript</span>
             <span class="skill-badge" data-i18n="badge.tech.python">Python</span>
-            <span class="skill-badge" data-i18n="badge.tech.django">Django</span>
-            <span class="skill-badge" data-i18n="badge.tech.drf">Django REST Framework</span>
-            <span class="skill-badge" data-i18n="badge.tech.pytest">pytest</span>
-            <span class="skill-badge" data-i18n="badge.tech.chartjs">Chart.js</span>
             <span class="skill-badge" data-i18n="badge.tech.sqlite">SQLite</span>
             <span class="skill-badge" data-i18n="badge.tech.git">Git</span>
-            <span class="skill-badge" data-i18n="badge.tech.javascript">JavaScript</span>
+            <span class="skill-badge" data-i18n="badge.tech.winforms">WinForms</span>
           </div>
 
           <h3 class="group-title" data-i18n="skills.group.tools">Narzędzia</h3>
@@ -96,6 +155,14 @@
 
           <h3 class="group-title" data-i18n="skills.group.comp">Kompetencje</h3>
           <div class="skills-grid">
+            <span class="skill-badge" data-i18n="badge.comp.railway">Railway systems development</span>
+            <span class="skill-badge" data-i18n="badge.comp.istqb">Certyfikat ISTQB FL 4.0</span>
+            <span class="skill-badge" data-i18n="badge.comp.epam">Certyfikat EPAM .NET Fundamentals</span>
+            <span class="skill-badge" data-i18n="badge.comp.di">Dependency Injection</span>
+            <span class="skill-badge" data-i18n="badge.comp.solid">SOLID</span>
+            <span class="skill-badge" data-i18n="badge.comp.designpatterns">Design Patterns</span>
+            <span class="skill-badge" data-i18n="badge.comp.cleanarch">Clean Architecture</span>
+            <span class="skill-badge" data-i18n="badge.comp.unittesting">Unit Testing</span>
             <span class="skill-badge" data-i18n="badge.comp.techdoc">Dokumentacja techniczna</span>
             <span class="skill-badge" data-i18n="badge.comp.testing">Testowanie oprogramowania</span>
             <span class="skill-badge" data-i18n="badge.comp.unit">Testy jednostkowe</span>
@@ -114,7 +181,6 @@
             <span class="skill-badge" data-i18n="badge.comp.database">Database design & optimization</span>
             <span class="skill-badge" data-i18n="badge.comp.cloud">Cloud integration</span>
             <span class="skill-badge" data-i18n="badge.comp.auth">Authentication & Authorization</span>
-            <span class="skill-badge" data-i18n="badge.comp.patterns">Software architecture & design patterns</span>
             <span class="skill-badge" data-i18n="badge.comp.cleancode">Clean code practices</span>
           </div>
         </section>
@@ -148,16 +214,46 @@
           'social.github': 'GitHub',
           'social.linkedin': 'LinkedIn',
           'welcome.title': 'Witaj',
-          'welcome.lead': 'Nazywam się Przemysław Przybyszewski i tworzę projekty, które odpowiadają na problemy rzeczywiste oraz rozwijają moje umiejętności. Na co dzień pracuję jako inżynier testów, a w wolnym czasie rozwijam projekty w ekosystemie .NET, szczególnie w Blazorze i .NET MAUI. Lubię projektować aplikacje, tworzyć koncepcję, architekturę, design i brać udział w całym cyklu życia oprogramowania.',
+          'welcome.lead': 'Nazywam się Przemysław Przybyszewski. Pracuję jako .NET Developer w PKP PLK S.A., gdzie rozwijam systemy kolejowe. Wcześniej przez kilka lat byłem inżynierem testów, co dało mi unikalne spojrzenie na jakość i architekturę kodu. W wolnym czasie buduję projekty w ekosystemie .NET — szczególnie w Blazorze i .NET MAUI.',
           'about.title': 'O mnie',
-          'about.p1': 'Jestem absolwentem Uniwersytetu WSB Merito we Wrocławiu oraz zawodowym inżynierem testów, który konsekwentnie rozwija się w kierunku programisty .NET.',
-          'about.p2': 'Na co dzień łączę wiedzę testerską z umiejętnościami programistycznymi, dzięki czemu potrafię patrzeć na projekt zarówno z perspektywy jakości, jak i architektury kodu.',
-          'about.p3': 'Pracuję głównie w technologiach C#, Blazor, .NET MAUI i Entity Framework Core.',
-          'about.p4': 'W wolnym czasie rozwijam własne projekty — w tym aplikację kadrowo-płacową, mobilną aplikację do wysyłek faktur do KSeF oraz mobilną aplikację do zarządzania dietą oraz listami zakupów.',
+          'about.p1': 'Absolwent Uniwersytetu WSB Merito we Wrocławiu. Pracuję jako .NET Developer w PKP PLK S.A., gdzie rozwijam oprogramowanie dla systemów kolejowych. Posiadam certyfikaty ISTQB Foundation Level 4.0 oraz EPAM .NET Fundamentals.',
+          'about.p2': 'Przez kilka lat pracowałem jako inżynier testów, dzięki czemu patrzę na kod z perspektywy zarówno architekta, jak i osoby dbającej o jakość — znam typowe błędy i wiem, jak im zapobiegać już na etapie projektowania.',
+          'about.p3': 'Główny stack: C#, ASP.NET Core, Blazor, Entity Framework Core, xUnit/NUnit, SQL, REST API.',
+          'about.p4': 'W wolnym czasie rozwijam własne projekty — aplikację kadrowo-płacową CloudFlow, mobilną aplikację FoodBook oraz aplikację do wysyłki faktur do KSeF.',
           'skills.title': 'Umiejętności',
           'skills.group.tech': 'Technologie',
           'skills.group.tools': 'Narzędzia',
           'skills.group.comp': 'Kompetencje',
+          'certs.title': 'Certyfikaty',
+          'certs.istqb.title': 'ISTQB® Certified Tester Foundation Level 4.0',
+          'certs.istqb.meta': 'ISTQB · 2024 · 2 dni',
+          'certs.istqb.alt': 'ISTQB Foundation Level 4.0',
+          'certs.istqb.skill1': 'Podstawy testowania oprogramowania (cele, zasady, psychologia testowania)',
+          'certs.istqb.skill2': 'Poziomy testów (jednostkowe, integracyjne, systemowe, akceptacyjne)',
+          'certs.istqb.skill3': 'Rodzaje testów (funkcjonalne, niefunkcjonalne, regresyjne, eksploracyjne)',
+          'certs.istqb.skill4': 'Statyczne techniki testowania (przeglądy, walkthrough, inspekcje)',
+          'certs.istqb.skill5': 'Techniki projektowania testów (partycjonowanie równoważnościowe, analiza wartości brzegowych, tablice decyzyjne)',
+          'certs.istqb.skill6': 'Podstawy zarządzania testami (planowanie, estymacja, priorytetyzacja, testowanie oparte na ryzyku)',
+          'certs.istqb.skill7': 'Cykl życia defektu (zgłaszanie błędów, severity vs priority, proces zarządzania defektami)',
+          'certs.istqb.skill8': 'Narzędzia testowe i podstawy automatyzacji (narzędzia do wykonywania testów, świadomość CI/CD)',
+          'certs.istqb.skill9': 'Zasady testowania zwinnego (shift-left testing, continuous testing w Scrum/Kanban)',
+          'certs.istqb.skill10': 'Metryki i raportowanie testów (pokrycie, gęstość defektów, raportowanie postępu testów)',
+          'certs.istqb.skill11': 'Podstawy zarządzania konfiguracją i środowisk testowych',
+          'certs.epam.title': 'EPAM .NET Fundamentals',
+          'certs.epam.meta': 'EPAM Systems · 2025 · 4 miesiące',
+          'certs.epam.alt': 'EPAM .NET Fundamentals',
+          'certs.epam.skill1': 'Podstawy C# (OOP, generyki, LINQ)',
+          'certs.epam.skill2': 'Podstawy ASP.NET Core (DI, middleware pipeline, konfiguracja)',
+          'certs.epam.skill3': 'Tworzenie REST API (kontrolery, routing, model binding, walidacja)',
+          'certs.epam.skill4': 'Entity Framework Core (DbContext, migracje, relacje, zapytania LINQ)',
+          'certs.epam.skill5': 'Programowanie asynchroniczne (async/await, Task-based programming, CancellationToken)',
+          'certs.epam.skill6': 'Podstawy wielowątkowości (ThreadPool, Task Parallel Library)',
+          'certs.epam.skill7': 'Reflection (inspekcja typów, dynamiczne wywołania, atrybuty)',
+          'certs.epam.skill8': 'Serializacja (System.Text.Json, serializacja XML, własne konwertery)',
+          'certs.epam.skill9': 'Wzorce projektowe i zasady SOLID (podstawy Clean Architecture)',
+          'certs.epam.skill10': 'Podstawy testów jednostkowych (xUnit, wzorzec AAA)',
+          'certs.epam.skill11': 'Mockowanie z Moq (stubsy, mocki, weryfikacja, konfiguracje)',
+          'certs.epam.skill12': 'Podstawy SQL (JOIN-y, agregacje, podstawy indeksowania)',
           'projects.title': 'Projekty',
           'projects.ksef': 'Ksef Mobile App',
           'projects.cloudflow': 'CloudFlow HR',
@@ -168,23 +264,36 @@
           
           /* Badge: Technologies */
           'badge.tech.csharp': 'C#',
-          'badge.tech.dotnetmaui': '.NET MAUI',
+          'badge.tech.dotnet': '.NET',
           'badge.tech.aspnetcore': 'ASP.NET Core',
+          'badge.tech.webapi': 'Web API',
           'badge.tech.blazor': 'Blazor',
+          'badge.tech.dotnetmaui': '.NET MAUI',
+          'badge.tech.entityframeworkcore': 'Entity Framework Core',
           'badge.tech.sql': 'SQL',
-          'badge.tech.ef': 'Entity Framework',
           'badge.tech.linq': 'LINQ',
-          'badge.tech.html': 'HTML',
           'badge.tech.restapi': 'REST API',
-          'badge.tech.winforms': 'WinForms',
-          'badge.tech.python': 'Python',
-          'badge.tech.django': 'Django',
-          'badge.tech.drf': 'Django REST Framework',
-          'badge.tech.pytest': 'pytest',
-          'badge.tech.chartjs': 'Chart.js',
-          'badge.tech.sqlite': 'SQLite',
+          'badge.tech.xunit': 'xUnit',
+          'badge.tech.nunit': 'NUnit',
+          'badge.tech.mstest': 'MSTest',
+          'badge.tech.moq': 'Moq',
+          'badge.tech.unittesting': 'Unit Testing',
+          'badge.tech.di': 'Dependency Injection',
+          'badge.tech.solid': 'SOLID',
+          'badge.tech.designpatterns': 'Design Patterns',
+          'badge.tech.cleanarch': 'Clean Architecture',
+          'badge.tech.asyncawait': 'async/await',
+          'badge.tech.multithreading': 'Multithreading',
+          'badge.tech.concurrency': 'Concurrency',
+          'badge.tech.reflection': 'Reflection',
+          'badge.tech.systemtextjson': 'System.Text.Json',
+          'badge.tech.html': 'HTML',
+          'badge.tech.css': 'CSS',
           'badge.tech.javascript': 'JavaScript',
+          'badge.tech.python': 'Python',
+          'badge.tech.sqlite': 'SQLite',
           'badge.tech.git': 'Git',
+          'badge.tech.winforms': 'WinForms',
 
           /* Badge: Tools */
           'badge.tools.azuredevops': 'Azure DevOps',
@@ -200,6 +309,14 @@
           'badge.tools.reportgen': 'Generowanie raportów',
 
           /* Badge: Competencies */
+          'badge.comp.railway': 'Railway systems development',
+          'badge.comp.istqb': 'Certyfikat ISTQB FL 4.0',
+          'badge.comp.epam': 'Certyfikat EPAM .NET Fundamentals',
+          'badge.comp.di': 'Dependency Injection',
+          'badge.comp.solid': 'SOLID',
+          'badge.comp.designpatterns': 'Design Patterns',
+          'badge.comp.cleanarch': 'Clean Architecture',
+          'badge.comp.unittesting': 'Unit Testing',
           'badge.comp.techdoc': 'Dokumentacja techniczna',
           'badge.comp.testing': 'Testowanie oprogramowania',
           'badge.comp.unit': 'Testy jednostkowe',
@@ -231,16 +348,46 @@
           'social.github': 'GitHub',
           'social.linkedin': 'LinkedIn',
           'welcome.title': 'Welcome',
-          'welcome.lead': "My name is Przemysław Przybyszewski and I build projects that aim to solve real-world problems while growing my skills. I work as a test engineer by day, and after hours I develop projects in the .NET ecosystem, especially Blazor and .NET MAUI. I enjoy designing applications—concept, architecture, and UI—and taking part in the entire software lifecycle.",
+          'welcome.lead': "My name is Przemysław Przybyszewski. I work as a .NET Developer at PKP PLK S.A., building railway systems. Previously I spent several years as a test engineer — a background that sharpened my instincts for code quality and architecture. After hours I build projects in the .NET ecosystem, primarily Blazor and .NET MAUI.",
           'about.title': 'About me',
-          'about.p1': "I graduated from WSB Merito University in Wrocław and I'm a professional test engineer steadily moving toward .NET development.",
-          'about.p2': 'I combine testing expertise with programming skills, which lets me look at a project both from a quality perspective and code architecture.',
-          'about.p3': 'I mainly work with C#, Blazor, .NET MAUI and Entity Framework Core.',
-          'about.p4': 'After hours I build my own projects—an HR/payroll app, a mobile app for sending invoices to KSeF, and a mobile app for diet and shopping lists.',
+          'about.p1': 'Graduate of WSB Merito University in Wrocław. I work as a .NET Developer at PKP PLK S.A., where I develop software for railway systems. I hold ISTQB Foundation Level 4.0 and EPAM .NET Fundamentals certifications.',
+          'about.p2': 'For several years I worked as a test engineer, which gives me an architect\'s and quality-focused perspective on code — I know the typical mistakes and how to prevent them at the design stage.',
+          'about.p3': 'Main stack: C#, ASP.NET Core, Blazor, Entity Framework Core, xUnit/NUnit, SQL, REST API.',
+          'about.p4': 'In my free time I develop my own projects — the CloudFlow HR/payroll app, the FoodBook mobile app, and the KSeF invoice sending app.',
           'skills.title': 'Skills',
           'skills.group.tech': 'Technologies',
           'skills.group.tools': 'Tools',
           'skills.group.comp': 'Competencies',
+          'certs.title': 'Certifications',
+          'certs.istqb.title': 'ISTQB® Certified Tester Foundation Level 4.0',
+          'certs.istqb.meta': 'ISTQB · 2024 · 2 days',
+          'certs.istqb.alt': 'ISTQB Foundation Level 4.0',
+          'certs.istqb.skill1': 'Fundamentals of software testing (objectives, principles, psychology of testing)',
+          'certs.istqb.skill2': 'Test levels (unit, integration, system, acceptance testing)',
+          'certs.istqb.skill3': 'Test types (functional, non-functional, regression, exploratory testing)',
+          'certs.istqb.skill4': 'Static testing techniques (reviews, walkthroughs, inspections)',
+          'certs.istqb.skill5': 'Test design techniques (equivalence partitioning, boundary value analysis, decision tables)',
+          'certs.istqb.skill6': 'Test management basics (test planning, estimation, prioritization, risk-based testing)',
+          'certs.istqb.skill7': 'Defect lifecycle (bug reporting, severity vs priority, defect management process)',
+          'certs.istqb.skill8': 'Test tools and automation basics (test execution tools, CI/CD awareness)',
+          'certs.istqb.skill9': 'Agile testing principles (shift-left testing, continuous testing in Scrum/Kanban)',
+          'certs.istqb.skill10': 'Test metrics and reporting (coverage, defect density, test progress reporting)',
+          'certs.istqb.skill11': 'Configuration management and test environments basics',
+          'certs.epam.title': 'EPAM .NET Fundamentals',
+          'certs.epam.meta': 'EPAM Systems · 2025 · 4 months',
+          'certs.epam.alt': 'EPAM .NET Fundamentals',
+          'certs.epam.skill1': 'C# Fundamentals (OOP, generics, LINQ)',
+          'certs.epam.skill2': 'ASP.NET Core Fundamentals (DI, middleware pipeline, configuration)',
+          'certs.epam.skill3': 'REST API development (controllers, routing, model binding, validation)',
+          'certs.epam.skill4': 'Entity Framework Core (DbContext, migrations, relationships, LINQ queries)',
+          'certs.epam.skill5': 'Asynchronous programming (async/await, Task-based programming, CancellationToken)',
+          'certs.epam.skill6': 'Multithreading basics (ThreadPool, Task Parallel Library)',
+          'certs.epam.skill7': 'Reflection (type inspection, dynamic invocation, attributes)',
+          'certs.epam.skill8': 'Serialization (System.Text.Json, XML serialization, custom converters)',
+          'certs.epam.skill9': 'Design Patterns & SOLID principles (Clean Architecture basics)',
+          'certs.epam.skill10': 'Unit Testing fundamentals (xUnit, AAA pattern)',
+          'certs.epam.skill11': 'Mocking with Moq (stubs, mocks, verification, setups)',
+          'certs.epam.skill12': 'SQL fundamentals (JOINs, aggregations, indexing basics)',
           'projects.title': 'Projects',
           'projects.ksef': 'Ksef Mobile App',
           'projects.cloudflow': 'CloudFlow HR',
@@ -251,23 +398,36 @@
 
           /* Badge: Technologies */
           'badge.tech.csharp': 'C#',
-          'badge.tech.dotnetmaui': '.NET MAUI',
+          'badge.tech.dotnet': '.NET',
           'badge.tech.aspnetcore': 'ASP.NET Core',
+          'badge.tech.webapi': 'Web API',
           'badge.tech.blazor': 'Blazor',
+          'badge.tech.dotnetmaui': '.NET MAUI',
+          'badge.tech.entityframeworkcore': 'Entity Framework Core',
           'badge.tech.sql': 'SQL',
-          'badge.tech.ef': 'Entity Framework',
           'badge.tech.linq': 'LINQ',
-          'badge.tech.html': 'HTML',
           'badge.tech.restapi': 'REST API',
-          'badge.tech.winforms': 'WinForms',
-          'badge.tech.python': 'Python',
-          'badge.tech.django': 'Django',
-          'badge.tech.drf': 'Django REST Framework',
-          'badge.tech.pytest': 'pytest',
-          'badge.tech.chartjs': 'Chart.js',
-          'badge.tech.sqlite': 'SQLite',
+          'badge.tech.xunit': 'xUnit',
+          'badge.tech.nunit': 'NUnit',
+          'badge.tech.mstest': 'MSTest',
+          'badge.tech.moq': 'Moq',
+          'badge.tech.unittesting': 'Unit Testing',
+          'badge.tech.di': 'Dependency Injection',
+          'badge.tech.solid': 'SOLID',
+          'badge.tech.designpatterns': 'Design Patterns',
+          'badge.tech.cleanarch': 'Clean Architecture',
+          'badge.tech.asyncawait': 'async/await',
+          'badge.tech.multithreading': 'Multithreading',
+          'badge.tech.concurrency': 'Concurrency',
+          'badge.tech.reflection': 'Reflection',
+          'badge.tech.systemtextjson': 'System.Text.Json',
+          'badge.tech.html': 'HTML',
+          'badge.tech.css': 'CSS',
           'badge.tech.javascript': 'JavaScript',
+          'badge.tech.python': 'Python',
+          'badge.tech.sqlite': 'SQLite',
           'badge.tech.git': 'Git',
+          'badge.tech.winforms': 'WinForms',
 
           /* Badge: Tools */
           'badge.tools.azuredevops': 'Azure DevOps',
@@ -283,6 +443,14 @@
           'badge.tools.reportgen': 'Report Generation',
 
           /* Badge: Competencies */
+          'badge.comp.railway': 'Railway systems development',
+          'badge.comp.istqb': 'ISTQB FL 4.0 Certificate',
+          'badge.comp.epam': 'EPAM .NET Fundamentals Certificate',
+          'badge.comp.di': 'Dependency Injection',
+          'badge.comp.solid': 'SOLID',
+          'badge.comp.designpatterns': 'Design Patterns',
+          'badge.comp.cleanarch': 'Clean Architecture',
+          'badge.comp.unittesting': 'Unit Testing',
           'badge.comp.techdoc': 'Technical Documentation',
           'badge.comp.testing': 'Software Testing',
           'badge.comp.unit': 'Unit Testing',
